@@ -1,0 +1,602 @@
+{
+ "meta": {
+  "pack": "claude-style",
+  "model": "claude-sonnet-5",
+  "generated": "AUTO",
+  "genres_detected": [
+   "essay",
+   "expo",
+   "wiki"
+  ],
+  "n_gen": 36,
+  "n_human": 12,
+  "discrimination_15sent": {
+   "acc": 0.955,
+   "ci95": [
+    0.919,
+    0.991
+   ],
+   "n": 111
+  },
+  "method": "build_pack.py 통합 파이프라인 (요인+특징+폐쇄류+사전+판별)",
+  "caveat": "표기 계열 제외(장르 교란). 요인 공간은 1930s 소설 추정. 대조군 장르에 특화 — 다장르 인간 대조군 권장."
+ },
+ "factor_signature": {
+  "문장 호흡": 0.92,
+  "길이 균질성": 1.7,
+  "결속 암시성": 0.61,
+  "주제 반복성": -0.9,
+  "표기·대화 습관": 0.92,
+  "문어 격식성": -0.58,
+  "장단 교대성": -0.51
+ },
+ "feature_markers": {
+  "L7_first_person_sent": {
+   "d": 0.85,
+   "codex": 0.046,
+   "human": 0.006
+  },
+  "CX_not_a_but_b_sent": {
+   "d": 0.61,
+   "codex": 0.036,
+   "human": 0.005
+  },
+  "L2_etm_ej": {
+   "d": 1.01,
+   "codex": 14.653,
+   "human": 11.205
+  },
+  "L2_verb_density_ej": {
+   "d": 0.71,
+   "codex": 26.112,
+   "human": 20.481
+  },
+  "L2_subject_ellipsis_sent": {
+   "d": -1.17,
+   "codex": 0.39,
+   "human": 0.599
+  },
+  "L2_etm_chain_max": {
+   "d": 1.28,
+   "codex": 0.889,
+   "human": 0.695
+  }
+ },
+ "ending_overuse": {
+  "진다": {
+   "codex": 0.044,
+   "human": 0.02
+  }
+ },
+ "connective_overuse": {
+  "면서": {
+   "codex": 0.069,
+   "human": 0.025
+  }
+ },
+ "adverb_overuse": {
+  "늘": {
+   "codex": 0.035,
+   "human": 0.005
+  },
+  "결국": {
+   "codex": 0.116,
+   "human": 0.027
+  },
+  "오히려": {
+   "codex": 0.069,
+   "human": 0.005
+  },
+  "역시": {
+   "codex": 0.046,
+   "human": 0.016
+  },
+  "도시": {
+   "codex": 0.069,
+   "human": 0.021
+  }
+ },
+ "content_words": {
+  "습관": {
+   "z": 5.03,
+   "topics": 6,
+   "codex_per10k": 48.39,
+   "human_per10k": 8.26
+  },
+  "방식": {
+   "z": 4.88,
+   "topics": 12,
+   "codex_per10k": 51.54,
+   "human_per10k": 11.57
+  },
+  "시간": {
+   "z": 4.84,
+   "topics": 10,
+   "codex_per10k": 98.87,
+   "human_per10k": 42.14
+  },
+  "관리": {
+   "z": 4.64,
+   "topics": 7,
+   "codex_per10k": 52.59,
+   "human_per10k": 14.05
+  },
+  "문제": {
+   "z": 4.18,
+   "topics": 9,
+   "codex_per10k": 35.76,
+   "human_per10k": 0.83
+  },
+  "중요": {
+   "z": 4.14,
+   "topics": 10,
+   "codex_per10k": 45.23,
+   "human_per10k": 13.22
+  },
+  "자리": {
+   "z": 3.98,
+   "topics": 9,
+   "codex_per10k": 27.35,
+   "human_per10k": 2.48
+  },
+  "활용": {
+   "z": 3.92,
+   "topics": 9,
+   "codex_per10k": 30.5,
+   "human_per10k": 0.83
+  },
+  "반복": {
+   "z": 3.74,
+   "topics": 8,
+   "codex_per10k": 27.35,
+   "human_per10k": 4.96
+  },
+  "저장": {
+   "z": 3.65,
+   "topics": 4,
+   "codex_per10k": 23.14,
+   "human_per10k": 1.65
+  },
+  "이해": {
+   "z": 3.63,
+   "topics": 10,
+   "codex_per10k": 25.24,
+   "human_per10k": 0.83
+  },
+  "단순": {
+   "z": 3.56,
+   "topics": 11,
+   "codex_per10k": 24.19,
+   "human_per10k": 0.83
+  },
+  "환경": {
+   "z": 3.55,
+   "topics": 10,
+   "codex_per10k": 38.92,
+   "human_per10k": 13.22
+  },
+  "사실": {
+   "z": 3.49,
+   "topics": 9,
+   "codex_per10k": 21.04,
+   "human_per10k": 1.65
+  },
+  "달라지": {
+   "z": 3.36,
+   "topics": 8,
+   "codex_per10k": 19.99,
+   "human_per10k": 2.48
+  },
+  "행위": {
+   "z": 3.25,
+   "topics": 5,
+   "codex_per10k": 18.93,
+   "human_per10k": 2.48
+  },
+  "자연": {
+   "z": 3.22,
+   "topics": 8,
+   "codex_per10k": 18.93,
+   "human_per10k": 0.83
+  },
+  "대표": {
+   "z": 3.22,
+   "topics": 9,
+   "codex_per10k": 21.04,
+   "human_per10k": 4.13
+  },
+  "자신": {
+   "z": 3.14,
+   "topics": 6,
+   "codex_per10k": 17.88,
+   "human_per10k": 2.48
+  },
+  "신호": {
+   "z": 3.14,
+   "topics": 5,
+   "codex_per10k": 17.88,
+   "human_per10k": 2.48
+  },
+  "형성": {
+   "z": 3.06,
+   "topics": 7,
+   "codex_per10k": 21.04,
+   "human_per10k": 4.96
+  },
+  "이어지": {
+   "z": 3.06,
+   "topics": 9,
+   "codex_per10k": 16.83,
+   "human_per10k": 0.83
+  },
+  "문화": {
+   "z": 3.06,
+   "topics": 6,
+   "codex_per10k": 21.04,
+   "human_per10k": 4.96
+  },
+  "생각": {
+   "z": 2.95,
+   "topics": 8,
+   "codex_per10k": 29.45,
+   "human_per10k": 10.74
+  },
+  "과정": {
+   "z": 2.93,
+   "topics": 10,
+   "codex_per10k": 61.01,
+   "human_per10k": 33.05
+  },
+  "정하": {
+   "z": 2.9,
+   "topics": 5,
+   "codex_per10k": 14.73,
+   "human_per10k": 1.65
+  },
+  "변화": {
+   "z": 2.9,
+   "topics": 10,
+   "codex_per10k": 49.44,
+   "human_per10k": 24.79
+  },
+  "결국": {
+   "z": 2.88,
+   "topics": 9,
+   "codex_per10k": 16.83,
+   "human_per10k": 3.31
+  },
+  "원리": {
+   "z": 2.88,
+   "topics": 6,
+   "codex_per10k": 16.83,
+   "human_per10k": 3.31
+  },
+  "발달": {
+   "z": 2.88,
+   "topics": 7,
+   "codex_per10k": 14.73,
+   "human_per10k": 0.83
+  },
+  "조금": {
+   "z": 2.79,
+   "topics": 8,
+   "codex_per10k": 13.67,
+   "human_per10k": 0.83
+  },
+  "자동차": {
+   "z": 2.78,
+   "topics": 4,
+   "codex_per10k": 14.73,
+   "human_per10k": 2.48
+  },
+  "이후": {
+   "z": 2.78,
+   "topics": 10,
+   "codex_per10k": 30.5,
+   "human_per10k": 12.39
+  },
+  "개인": {
+   "z": 2.74,
+   "topics": 7,
+   "codex_per10k": 15.78,
+   "human_per10k": 3.31
+  },
+  "계획": {
+   "z": 2.73,
+   "topics": 4,
+   "codex_per10k": 26.3,
+   "human_per10k": 9.92
+  },
+  "형태": {
+   "z": 2.72,
+   "topics": 9,
+   "codex_per10k": 21.04,
+   "human_per10k": 6.61
+  },
+  "배경": {
+   "z": 2.69,
+   "topics": 5,
+   "codex_per10k": 12.62,
+   "human_per10k": 0.83
+  },
+  "하루": {
+   "z": 2.68,
+   "topics": 8,
+   "codex_per10k": 28.4,
+   "human_per10k": 11.57
+  },
+  "거리": {
+   "z": 2.66,
+   "topics": 5,
+   "codex_per10k": 12.62,
+   "human_per10k": 1.65
+  },
+  "최근": {
+   "z": 2.66,
+   "topics": 7,
+   "codex_per10k": 12.62,
+   "human_per10k": 1.65
+  },
+  "순간": {
+   "z": 2.64,
+   "topics": 9,
+   "codex_per10k": 13.67,
+   "human_per10k": 2.48
+  },
+  "역할": {
+   "z": 2.64,
+   "topics": 5,
+   "codex_per10k": 13.67,
+   "human_per10k": 2.48
+  },
+  "오늘날": {
+   "z": 2.62,
+   "topics": 7,
+   "codex_per10k": 18.93,
+   "human_per10k": 5.78
+  },
+  "목표": {
+   "z": 2.52,
+   "topics": 4,
+   "codex_per10k": 11.57,
+   "human_per10k": 1.65
+  },
+  "체계": {
+   "z": 2.47,
+   "topics": 6,
+   "codex_per10k": 10.52,
+   "human_per10k": 0.83
+  },
+  "가리키": {
+   "z": 2.47,
+   "topics": 7,
+   "codex_per10k": 10.52,
+   "human_per10k": 0.83
+  },
+  "현상": {
+   "z": 2.45,
+   "topics": 4,
+   "codex_per10k": 13.67,
+   "human_per10k": 3.31
+  },
+  "자체": {
+   "z": 2.42,
+   "topics": 9,
+   "codex_per10k": 16.83,
+   "human_per10k": 0.0
+  },
+  "느끼": {
+   "z": 2.42,
+   "topics": 8,
+   "codex_per10k": 16.83,
+   "human_per10k": 0.0
+  },
+  "채우": {
+   "z": 2.34,
+   "topics": 5,
+   "codex_per10k": 9.47,
+   "human_per10k": 0.83
+  },
+  "바꾸": {
+   "z": 2.34,
+   "topics": 8,
+   "codex_per10k": 11.57,
+   "human_per10k": 2.48
+  },
+  "핵심": {
+   "z": 2.34,
+   "topics": 8,
+   "codex_per10k": 15.78,
+   "human_per10k": 0.0
+  },
+  "동시": {
+   "z": 2.34,
+   "topics": 7,
+   "codex_per10k": 11.57,
+   "human_per10k": 2.48
+  },
+  "연결": {
+   "z": 2.34,
+   "topics": 6,
+   "codex_per10k": 9.47,
+   "human_per10k": 0.83
+  },
+  "지니": {
+   "z": 2.34,
+   "topics": 6,
+   "codex_per10k": 9.47,
+   "human_per10k": 0.83
+  },
+  "인류": {
+   "z": 2.34,
+   "topics": 5,
+   "codex_per10k": 9.47,
+   "human_per10k": 0.83
+  },
+  "측면": {
+   "z": 2.34,
+   "topics": 5,
+   "codex_per10k": 9.47,
+   "human_per10k": 0.83
+  },
+  "작용": {
+   "z": 2.34,
+   "topics": 4,
+   "codex_per10k": 11.57,
+   "human_per10k": 2.48
+  },
+  "건강": {
+   "z": 2.32,
+   "topics": 6,
+   "codex_per10k": 16.83,
+   "human_per10k": 5.78
+  },
+  "알리": {
+   "z": 2.32,
+   "topics": 8,
+   "codex_per10k": 23.14,
+   "human_per10k": 9.92
+  },
+  "일상": {
+   "z": 2.21,
+   "topics": 5,
+   "codex_per10k": 9.47,
+   "human_per10k": 1.65
+  },
+  "이야기": {
+   "z": 2.2,
+   "topics": 5,
+   "codex_per10k": 8.41,
+   "human_per10k": 0.83
+  },
+  "공간": {
+   "z": 2.19,
+   "topics": 5,
+   "codex_per10k": 14.73,
+   "human_per10k": 4.96
+  },
+  "다루": {
+   "z": 2.18,
+   "topics": 7,
+   "codex_per10k": 13.67,
+   "human_per10k": 0.0
+  },
+  "목적": {
+   "z": 2.09,
+   "topics": 5,
+   "codex_per10k": 17.88,
+   "human_per10k": 7.44
+  },
+  "다르": {
+   "z": 2.06,
+   "topics": 10,
+   "codex_per10k": 18.93,
+   "human_per10k": 8.26
+  },
+  "바뀌": {
+   "z": 2.06,
+   "topics": 7,
+   "codex_per10k": 12.62,
+   "human_per10k": 4.13
+  },
+  "나누": {
+   "z": 2.06,
+   "topics": 6,
+   "codex_per10k": 12.62,
+   "human_per10k": 4.13
+  },
+  "보급": {
+   "z": 2.04,
+   "topics": 6,
+   "codex_per10k": 8.41,
+   "human_per10k": 1.65
+  },
+  "지적": {
+   "z": 2.04,
+   "topics": 7,
+   "codex_per10k": 8.41,
+   "human_per10k": 1.65
+  },
+  "확산": {
+   "z": 2.04,
+   "topics": 5,
+   "codex_per10k": 8.41,
+   "human_per10k": 1.65
+  },
+  "의식": {
+   "z": 2.02,
+   "topics": 4,
+   "codex_per10k": 13.67,
+   "human_per10k": 4.96
+  },
+  "인간": {
+   "z": 2.02,
+   "topics": 5,
+   "codex_per10k": 13.67,
+   "human_per10k": 4.96
+  },
+  "리듬": {
+   "z": 2.01,
+   "topics": 5,
+   "codex_per10k": 11.57,
+   "human_per10k": 0.0
+  },
+  "움직이": {
+   "z": 2.01,
+   "topics": 8,
+   "codex_per10k": 11.57,
+   "human_per10k": 0.0
+  }
+ },
+ "phrases": {
+  "-는 셈이다": {
+   "pattern": "셈 이",
+   "ratio": 12.98,
+   "topics": 6,
+   "codex_per10k": 5.99,
+   "human_per10k": 0.0
+  },
+  "-ㄴ 채": {
+   "pattern": "ᆫ 채|은 채|는 채",
+   "ratio": 3.69,
+   "topics": 5,
+   "codex_per10k": 8.56,
+   "human_per10k": 1.95
+  },
+  "-는 동안": {
+   "pattern": "는 동안|ᆫ 동안",
+   "ratio": 3.47,
+   "topics": 6,
+   "codex_per10k": 10.27,
+   "human_per10k": 2.61
+  },
+  "-어지다": {
+   "pattern": "[어아여] 지(?= )",
+   "ratio": 2.51,
+   "topics": 12,
+   "codex_per10k": 94.11,
+   "human_per10k": 37.14
+  },
+  "-어 주다": {
+   "pattern": "[어아여] 주",
+   "ratio": 2.38,
+   "topics": 10,
+   "codex_per10k": 23.96,
+   "human_per10k": 9.77
+  },
+  "-ㄴ다는 것": {
+   "pattern": "ᆫ다는|는다는",
+   "ratio": 2.35,
+   "topics": 12,
+   "codex_per10k": 28.23,
+   "human_per10k": 11.73
+  },
+  "-기도 하다": {
+   "pattern": "기 도 하",
+   "ratio": 2.08,
+   "topics": 8,
+   "codex_per10k": 22.25,
+   "human_per10k": 10.43
+  }
+ }
+}
