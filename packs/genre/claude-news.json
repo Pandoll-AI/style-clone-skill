@@ -1,0 +1,225 @@
+{
+ "meta": {
+  "pack": "claude-news",
+  "model": "claude-sonnet-5",
+  "generated": "AUTO",
+  "genre": "news",
+  "genres_detected": [
+   "news"
+  ],
+  "n_gen": 12,
+  "n_human": 27,
+  "discrimination_15sent": {
+   "acc": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 55
+  },
+  "method": "build_pack.py 통합 파이프라인 (요인+특징+폐쇄류+사전+판별)",
+  "caveat": "표기 계열 제외(장르 교란). 요인 공간은 1930s 소설 추정. 대조군 장르에 특화 — 다장르 인간 대조군 권장."
+ },
+ "factor_signature": {
+  "길이 균질성": 1.32,
+  "결속 암시성": 1.31,
+  "주제 반복성": -0.76,
+  "문어 격식성": 0.82,
+  "장단 교대성": 0.72
+ },
+ "feature_markers": {
+  "CX_not_a_but_b_sent": {
+   "d": -0.51,
+   "codex": 0.0,
+   "human": 0.009
+  },
+  "CX_hal_su_sent": {
+   "d": -0.59,
+   "codex": 0.024,
+   "human": 0.069
+  },
+  "CX_geot_end_sent": {
+   "d": -0.7,
+   "codex": 0.0,
+   "human": 0.017
+  },
+  "CX_triple_list_sent": {
+   "d": -0.81,
+   "codex": 0.0,
+   "human": 0.03
+  },
+  "CX_conditional_sent": {
+   "d": -0.82,
+   "codex": 0.0,
+   "human": 0.025
+  },
+  "L2_nominalization_ej": {
+   "d": -0.78,
+   "codex": 1.673,
+   "human": 2.566
+  },
+  "L2_etm_ej": {
+   "d": -1.54,
+   "codex": 8.318,
+   "human": 12.194
+  },
+  "L2_xsv_ej": {
+   "d": 1.09,
+   "codex": 10.616,
+   "human": 7.709
+  },
+  "L2_verb_density_ej": {
+   "d": -2.05,
+   "codex": 14.285,
+   "human": 23.226
+  },
+  "L3_abstract_suffix_ej": {
+   "d": 0.83,
+   "codex": 2.429,
+   "human": 1.058
+  },
+  "L7_interjection_sent": {
+   "d": -0.58,
+   "codex": 0.0,
+   "human": 0.014
+  },
+  "L7_quote_particle_sent": {
+   "d": 0.88,
+   "codex": 0.144,
+   "human": 0.059
+  }
+ },
+ "ending_overuse": {
+  "했다": {
+   "codex": 0.308,
+   "human": 0.124
+  },
+  "됐다": {
+   "codex": 0.05,
+   "human": 0.01
+  },
+  "혔다": {
+   "codex": 0.125,
+   "human": 0.017
+  },
+  "온다": {
+   "codex": 0.033,
+   "human": 0.003
+  },
+  "졌다": {
+   "codex": 0.058,
+   "human": 0.017
+  }
+ },
+ "connective_overuse": {
+  "며": {
+   "codex": 0.182,
+   "human": 0.085
+  },
+  "으며": {
+   "codex": 0.083,
+   "human": 0.039
+  }
+ },
+ "adverb_overuse": {
+  "또": {
+   "codex": 0.083,
+   "human": 0.044
+  },
+  "가장": {
+   "codex": 0.25,
+   "human": 0.109
+  },
+  "다시": {
+   "codex": 0.167,
+   "human": 0.044
+  },
+  "모두": {
+   "codex": 0.167,
+   "human": 0.049
+  },
+  "좀": {
+   "codex": 0.083,
+   "human": 0.005
+  }
+ },
+ "content_words": {
+  "이번": {
+   "z": 5.49,
+   "topics": 11,
+   "codex_per10k": 175.12,
+   "human_per10k": 35.23
+  },
+  "밝히": {
+   "z": 4.32,
+   "topics": 12,
+   "codex_per10k": 102.66,
+   "human_per10k": 18.97
+  },
+  "관계자": {
+   "z": 4.1,
+   "topics": 9,
+   "codex_per10k": 66.43,
+   "human_per10k": 2.71
+  },
+  "계획": {
+   "z": 3.92,
+   "topics": 7,
+   "codex_per10k": 60.39,
+   "human_per10k": 2.71
+  },
+  "확대": {
+   "z": 3.92,
+   "topics": 7,
+   "codex_per10k": 66.43,
+   "human_per10k": 1.35
+  },
+  "설명": {
+   "z": 3.52,
+   "topics": 8,
+   "codex_per10k": 48.31,
+   "human_per10k": 2.71
+  },
+  "국내": {
+   "z": 3.2,
+   "topics": 4,
+   "codex_per10k": 48.31,
+   "human_per10k": 6.77
+  },
+  "지역": {
+   "z": 2.59,
+   "topics": 5,
+   "codex_per10k": 48.31,
+   "human_per10k": 12.19
+  },
+  "정부": {
+   "z": 2.19,
+   "topics": 5,
+   "codex_per10k": 60.39,
+   "human_per10k": 23.03
+  }
+ },
+ "phrases": {
+  "-을 통해": {
+   "pattern": "을 통하|를 통하",
+   "ratio": 3.94,
+   "topics": 7,
+   "codex_per10k": 50.14,
+   "human_per10k": 12.35
+  },
+  "-에 따라": {
+   "pattern": "에 따르|에 따라",
+   "ratio": 2.47,
+   "topics": 7,
+   "codex_per10k": 44.57,
+   "human_per10k": 17.76
+  },
+  "-어지다": {
+   "pattern": "[어아여] 지(?= )",
+   "ratio": 1.94,
+   "topics": 4,
+   "codex_per10k": 33.43,
+   "human_per10k": 16.99
+  }
+ }
+}

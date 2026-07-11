@@ -1,0 +1,299 @@
+{
+ "meta": {
+  "pack": "claude-wiki",
+  "model": "claude-sonnet-5",
+  "generated": "AUTO",
+  "genre": "wiki",
+  "genres_detected": [
+   "wiki"
+  ],
+  "n_gen": 12,
+  "n_human": 12,
+  "discrimination_15sent": {
+   "acc": 0.919,
+   "ci95": [
+    0.86,
+    0.977
+   ],
+   "n": 86
+  },
+  "method": "build_pack.py 통합 파이프라인 (요인+특징+폐쇄류+사전+판별)",
+  "caveat": "표기 계열 제외(장르 교란). 요인 공간은 1930s 소설 추정. 대조군 장르에 특화 — 다장르 인간 대조군 권장."
+ },
+ "factor_signature": {
+  "문장 호흡": 1.3,
+  "길이 균질성": 1.14,
+  "결속 암시성": 0.64,
+  "주제 반복성": -0.51,
+  "장단 교대성": 0.66
+ },
+ "feature_markers": {
+  "CX_geot_end_sent": {
+   "d": -0.7,
+   "codex": 0.0,
+   "human": 0.018
+  },
+  "CX_triple_list_sent": {
+   "d": 0.73,
+   "codex": 0.158,
+   "human": 0.079
+  },
+  "L2_etm_ej": {
+   "d": 0.58,
+   "codex": 13.364,
+   "human": 11.205
+  },
+  "L2_xsv_ej": {
+   "d": 0.56,
+   "codex": 9.916,
+   "human": 8.134
+  },
+  "L2_subject_ellipsis_sent": {
+   "d": -1.11,
+   "codex": 0.408,
+   "human": 0.599
+  },
+  "L2_etm_chain_max": {
+   "d": 1.28,
+   "codex": 0.9,
+   "human": 0.695
+  },
+  "L3_abstract_suffix_ej": {
+   "d": 0.87,
+   "codex": 3.674,
+   "human": 2.13
+  }
+ },
+ "ending_overuse": {
+  "된다": {
+   "codex": 0.164,
+   "human": 0.086
+  },
+  "왔다": {
+   "codex": 0.06,
+   "human": 0.006
+  },
+  "진다": {
+   "codex": 0.055,
+   "human": 0.02
+  },
+  "인다": {
+   "codex": 0.035,
+   "human": 0.005
+  }
+ },
+ "connective_overuse": {
+  "면서": {
+   "codex": 0.077,
+   "human": 0.025
+  }
+ },
+ "adverb_overuse": {
+  "도시": {
+   "codex": 0.133,
+   "human": 0.021
+  },
+  "오히려": {
+   "codex": 0.033,
+   "human": 0.005
+  },
+  "역시": {
+   "codex": 0.1,
+   "human": 0.016
+  }
+ },
+ "content_words": {
+  "방식": {
+   "z": 6.07,
+   "topics": 11,
+   "codex_per10k": 89.26,
+   "human_per10k": 11.57
+  },
+  "관리": {
+   "z": 5.52,
+   "topics": 6,
+   "codex_per10k": 83.1,
+   "human_per10k": 14.05
+  },
+  "습관": {
+   "z": 4.65,
+   "topics": 4,
+   "codex_per10k": 55.4,
+   "human_per10k": 8.26
+  },
+  "활용": {
+   "z": 4.17,
+   "topics": 8,
+   "codex_per10k": 46.17,
+   "human_per10k": 0.83
+  },
+  "이후": {
+   "z": 4.1,
+   "topics": 9,
+   "codex_per10k": 55.4,
+   "human_per10k": 12.39
+  },
+  "형성": {
+   "z": 4.09,
+   "topics": 5,
+   "codex_per10k": 40.01,
+   "human_per10k": 4.96
+  },
+  "개인": {
+   "z": 4.07,
+   "topics": 6,
+   "codex_per10k": 36.93,
+   "human_per10k": 3.31
+  },
+  "환경": {
+   "z": 3.99,
+   "topics": 9,
+   "codex_per10k": 55.4,
+   "human_per10k": 13.22
+  },
+  "발달": {
+   "z": 3.69,
+   "topics": 6,
+   "codex_per10k": 33.86,
+   "human_per10k": 0.83
+  },
+  "대표": {
+   "z": 3.54,
+   "topics": 7,
+   "codex_per10k": 30.78,
+   "human_per10k": 4.13
+  },
+  "과정": {
+   "z": 3.52,
+   "topics": 9,
+   "codex_per10k": 83.1,
+   "human_per10k": 33.05
+  },
+  "문화": {
+   "z": 3.4,
+   "topics": 5,
+   "codex_per10k": 30.78,
+   "human_per10k": 4.96
+  },
+  "지속": {
+   "z": 3.25,
+   "topics": 6,
+   "codex_per10k": 30.78,
+   "human_per10k": 5.78
+  },
+  "반복": {
+   "z": 3.13,
+   "topics": 6,
+   "codex_per10k": 27.7,
+   "human_per10k": 4.96
+  },
+  "형태": {
+   "z": 3.1,
+   "topics": 8,
+   "codex_per10k": 30.78,
+   "human_per10k": 6.61
+  },
+  "변화": {
+   "z": 2.99,
+   "topics": 7,
+   "codex_per10k": 61.56,
+   "human_per10k": 24.79
+  },
+  "중요": {
+   "z": 2.82,
+   "topics": 8,
+   "codex_per10k": 40.01,
+   "human_per10k": 13.22
+  },
+  "알리": {
+   "z": 2.8,
+   "topics": 6,
+   "codex_per10k": 33.86,
+   "human_per10k": 9.92
+  },
+  "오늘날": {
+   "z": 2.67,
+   "topics": 5,
+   "codex_per10k": 24.62,
+   "human_per10k": 5.78
+  },
+  "구분": {
+   "z": 2.67,
+   "topics": 6,
+   "codex_per10k": 24.62,
+   "human_per10k": 5.78
+  },
+  "영향": {
+   "z": 2.56,
+   "topics": 8,
+   "codex_per10k": 36.93,
+   "human_per10k": 13.22
+  },
+  "계획": {
+   "z": 2.52,
+   "topics": 4,
+   "codex_per10k": 30.78,
+   "human_per10k": 9.92
+  },
+  "다루": {
+   "z": 2.49,
+   "topics": 7,
+   "codex_per10k": 27.7,
+   "human_per10k": 0.0
+  },
+  "따르": {
+   "z": 2.22,
+   "topics": 10,
+   "codex_per10k": 73.87,
+   "human_per10k": 41.32
+  },
+  "시간": {
+   "z": 2.15,
+   "topics": 7,
+   "codex_per10k": 73.87,
+   "human_per10k": 42.14
+  },
+  "일정": {
+   "z": 2.07,
+   "topics": 4,
+   "codex_per10k": 27.7,
+   "human_per10k": 10.74
+  },
+  "미치": {
+   "z": 2.04,
+   "topics": 5,
+   "codex_per10k": 24.62,
+   "human_per10k": 9.09
+  }
+ },
+ "phrases": {
+  "-어지다": {
+   "pattern": "[어아여] 지(?= )",
+   "ratio": 2.46,
+   "topics": 12,
+   "codex_per10k": 92.07,
+   "human_per10k": 37.14
+  },
+  "-에 따라": {
+   "pattern": "에 따르|에 따라",
+   "ratio": 2.15,
+   "topics": 10,
+   "codex_per10k": 64.99,
+   "human_per10k": 29.97
+  },
+  "-을 통해": {
+   "pattern": "을 통하|를 통하",
+   "ratio": 1.91,
+   "topics": 5,
+   "codex_per10k": 21.66,
+   "human_per10k": 11.08
+  },
+  "-기도 하다": {
+   "pattern": "기 도 하",
+   "ratio": 1.53,
+   "topics": 4,
+   "codex_per10k": 16.25,
+   "human_per10k": 10.43
+  }
+ }
+}

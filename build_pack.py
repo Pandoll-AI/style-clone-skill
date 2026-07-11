@@ -47,18 +47,27 @@ def _cohens_d(a, b):
 
 
 def _load(paths, fdef, ch=CHUNK):
-    """청크 단위 (확장특징, 요인점수, 요인입력벡터) 수집."""
+    """청크 단위 (확장특징, 요인점수, 요인입력벡터) 수집.
+
+    뉴스처럼 짧은 문서(문장 < ch)는 문서 전체를 한 청크로 쓴다 — 그렇지 않으면
+    청크가 0개가 되어 장르 팩을 못 만든다. 담화·요인 특징의 최소 문장(8) 미만은 건너뜀.
+    """
     ext, fac, vec = [], [], []
     for p in paths:
         sents = split_sentences(open(p, encoding='utf-8').read())
-        for i in range(0, len(sents) - ch + 1, ch):
-            c = sents[i:i + ch]
+        if len(sents) >= ch:
+            chunks = [sents[i:i + ch] for i in range(0, len(sents) - ch + 1, ch)]
+        elif len(sents) >= 8:
+            chunks = [sents]                      # 짧은 문서 = 문서 단위 1청크
+        else:
+            continue
+        for c in chunks:
             try:
                 ext.append(ext_features_from_sents(c))
                 s, _ = project(c, fdef)
                 fac.append(s)
                 vec.append(chunk_vector(c))
-            except (ValueError, Exception):
+            except Exception:
                 continue
     return ext, fac, vec
 
@@ -101,10 +110,15 @@ def _discrimination(cx_vec, hu_vec, n_boot=1000):
             'n': n}
 
 
-def build(gen_dir, human_dir, name, model):
+def build(gen_dir, human_dir, name, model, genre=None):
     fdef = load_factor_def()
     kiwi = bl.get_kiwi()
-    gen = sorted(glob.glob(f'{gen_dir}/*.txt'))
+    # 장르 필터: gen_dir에서 {genre}_*.txt 만 사용 (장르 팩). human_dir은
+    # 장르별 디렉토리를 통째로 주는 규약이므로 필터하지 않는다.
+    pat = f'{genre}_*.txt' if genre else '*.txt'
+    gen = sorted(glob.glob(f'{gen_dir}/{pat}'))
+    if not gen:                                   # 장르 접두어 없는 디렉토리면 전체
+        gen = sorted(glob.glob(f'{gen_dir}/*.txt'))
     hu = sorted(glob.glob(f'{human_dir}/*.txt'))
     cx_ext, cx_fac, cx_vec = _load(gen, fdef)
     hu_ext, hu_fac, hu_vec = _load(hu, fdef)
@@ -147,6 +161,7 @@ def build(gen_dir, human_dir, name, model):
     return {
         'meta': {
             'pack': name, 'model': model, 'generated': 'AUTO',
+            'genre': genre or 'mixed',
             'genres_detected': sorted({os.path.basename(p).split('_')[0]
                                        for p in gen}),
             'n_gen': len(gen), 'n_human': len(hu),
@@ -180,9 +195,13 @@ def main():
             opts['name'] = next(it)
         elif a == '--model':
             opts['model'] = next(it)
+        elif a == '--genre':
+            opts['genre'] = next(it)
     gen_dir, human_dir, out = args[0], args[1], args[2]
     pack = build(gen_dir, human_dir, opts.get('name', 'style'),
-                 opts.get('model', 'unknown'))
+                 opts.get('model', 'unknown'),
+                 genre=opts.get('genre') if isinstance(opts.get('genre'), str)
+                 else None)
     json.dump(pack, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     m = pack['meta']
     print(f"팩 '{m['pack']}' → {out}")

@@ -1,0 +1,249 @@
+{
+ "meta": {
+  "pack": "codex-news",
+  "model": "gpt-5.6-sol",
+  "generated": "AUTO",
+  "genre": "news",
+  "genres_detected": [
+   "news"
+  ],
+  "n_gen": 12,
+  "n_human": 27,
+  "discrimination_15sent": {
+   "acc": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 55
+  },
+  "method": "build_pack.py 통합 파이프라인 (요인+특징+폐쇄류+사전+판별)",
+  "caveat": "표기 계열 제외(장르 교란). 요인 공간은 1930s 소설 추정. 대조군 장르에 특화 — 다장르 인간 대조군 권장."
+ },
+ "factor_signature": {
+  "길이 균질성": 2.3,
+  "결속 암시성": 2.45,
+  "주제 반복성": -1.86,
+  "표기·대화 습관": 0.82
+ },
+ "feature_markers": {
+  "L7_first_person_sent": {
+   "d": -0.67,
+   "codex": 0.0,
+   "human": 0.025
+  },
+  "CX_not_a_but_b_sent": {
+   "d": -0.51,
+   "codex": 0.0,
+   "human": 0.009
+  },
+  "CX_conditional_sent": {
+   "d": -0.57,
+   "codex": 0.006,
+   "human": 0.025
+  },
+  "L2_nominalization_ej": {
+   "d": -0.82,
+   "codex": 1.624,
+   "human": 2.566
+  },
+  "L2_etm_ej": {
+   "d": -0.58,
+   "codex": 10.702,
+   "human": 12.194
+  },
+  "L2_xsv_ej": {
+   "d": 0.66,
+   "codex": 9.634,
+   "human": 7.709
+  },
+  "L2_verb_density_ej": {
+   "d": -1.22,
+   "codex": 16.332,
+   "human": 23.226
+  },
+  "L3_abstract_suffix_ej": {
+   "d": 1.39,
+   "codex": 3.352,
+   "human": 1.058
+  },
+  "L7_interjection_sent": {
+   "d": -0.58,
+   "codex": 0.0,
+   "human": 0.014
+  }
+ },
+ "ending_overuse": {
+  "이다": {
+   "codex": 0.217,
+   "human": 0.112
+  },
+  "한다": {
+   "codex": 0.089,
+   "human": 0.036
+  },
+  "됐다": {
+   "codex": 0.076,
+   "human": 0.01
+  },
+  "혔다": {
+   "codex": 0.045,
+   "human": 0.017
+  },
+  "온다": {
+   "codex": 0.045,
+   "human": 0.003
+  }
+ },
+ "connective_overuse": {
+  "며": {
+   "codex": 0.164,
+   "human": 0.085
+  },
+  "도록": {
+   "codex": 0.045,
+   "human": 0.016
+  },
+  "면서": {
+   "codex": 0.082,
+   "human": 0.021
+  }
+ },
+ "adverb_overuse": {
+  "다시": {
+   "codex": 0.5,
+   "human": 0.044
+  },
+  "또": {
+   "codex": 0.167,
+   "human": 0.044
+  }
+ },
+ "content_words": {
+  "지원": {
+   "z": 4.09,
+   "topics": 5,
+   "codex_per10k": 61.38,
+   "human_per10k": 5.42
+  },
+  "지역": {
+   "z": 3.93,
+   "topics": 6,
+   "codex_per10k": 70.82,
+   "human_per10k": 12.19
+  },
+  "가격": {
+   "z": 3.81,
+   "topics": 4,
+   "codex_per10k": 51.94,
+   "human_per10k": 2.71
+  },
+  "계획": {
+   "z": 3.81,
+   "topics": 7,
+   "codex_per10k": 51.94,
+   "human_per10k": 2.71
+  },
+  "안정": {
+   "z": 3.79,
+   "topics": 7,
+   "codex_per10k": 51.94,
+   "human_per10k": 4.06
+  },
+  "정상": {
+   "z": 3.79,
+   "topics": 4,
+   "codex_per10k": 51.94,
+   "human_per10k": 4.06
+  },
+  "평가": {
+   "z": 3.76,
+   "topics": 7,
+   "codex_per10k": 61.38,
+   "human_per10k": 9.48
+  },
+  "확대": {
+   "z": 3.67,
+   "topics": 6,
+   "codex_per10k": 51.94,
+   "human_per10k": 1.35
+  },
+  "주요": {
+   "z": 3.59,
+   "topics": 8,
+   "codex_per10k": 47.21,
+   "human_per10k": 4.06
+  },
+  "높이": {
+   "z": 3.25,
+   "topics": 7,
+   "codex_per10k": 42.49,
+   "human_per10k": 5.42
+  },
+  "강화": {
+   "z": 3.24,
+   "topics": 7,
+   "codex_per10k": 37.77,
+   "human_per10k": 2.71
+  },
+  "개선": {
+   "z": 3.24,
+   "topics": 5,
+   "codex_per10k": 37.77,
+   "human_per10k": 2.71
+  },
+  "전망": {
+   "z": 3.0,
+   "topics": 7,
+   "codex_per10k": 37.77,
+   "human_per10k": 5.42
+  },
+  "이어지": {
+   "z": 2.78,
+   "topics": 8,
+   "codex_per10k": 42.49,
+   "human_per10k": 9.48
+  },
+  "안전": {
+   "z": 2.78,
+   "topics": 4,
+   "codex_per10k": 42.49,
+   "human_per10k": 9.48
+  },
+  "정부": {
+   "z": 2.47,
+   "topics": 6,
+   "codex_per10k": 61.38,
+   "human_per10k": 23.03
+  },
+  "밝히": {
+   "z": 2.04,
+   "topics": 5,
+   "codex_per10k": 47.21,
+   "human_per10k": 18.97
+  }
+ },
+ "phrases": {
+  "-ㄴ다는 것": {
+   "pattern": "ᆫ다는|는다는",
+   "ratio": 3.03,
+   "topics": 6,
+   "codex_per10k": 40.82,
+   "human_per10k": 13.13
+  },
+  "-어지다": {
+   "pattern": "[어아여] 지(?= )",
+   "ratio": 2.1,
+   "topics": 6,
+   "codex_per10k": 36.28,
+   "human_per10k": 16.99
+  },
+  "수 있다": {
+   "pattern": "수 있",
+   "ratio": 1.95,
+   "topics": 9,
+   "codex_per10k": 81.63,
+   "human_per10k": 41.7
+  }
+ }
+}

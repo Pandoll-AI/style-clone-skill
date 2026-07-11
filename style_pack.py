@@ -157,9 +157,13 @@ def measure(text, pack):
 
     hits.sort(key=lambda h: -h['severity'])
     codex_score = round(sum(h['severity'] for h in hits), 2)
-    return {'codex_score': codex_score, 'n_hits': len(hits),
-            'n_sent': len(sents), 'hits': hits,
-            'kiwi': lemmas is not None}
+    out = {'codex_score': codex_score, 'n_hits': len(hits),
+           'n_sent': len(sents), 'hits': hits, 'kiwi': lemmas is not None}
+    genre = pack.get('meta', {}).get('genre')
+    if genre and genre != 'mixed':
+        # 장르 매칭은 필수 (docs/07 H2: 불일치 시 판별 역전). 리포트에 표기.
+        out['pack_genre'] = genre
+    return out
 
 
 def prescribe(text, pack):
