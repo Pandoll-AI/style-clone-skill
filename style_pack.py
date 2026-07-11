@@ -14,11 +14,39 @@
   python3 style_pack.py strip packs/codex-style.json 글.txt      # 제거 처방(LLM 지시문)
 """
 import json
+import math
+import re
 import sys
 from collections import Counter
 
 from features_surface import split_sentences, chunk_features
 from features_ext import ext_features_from_sents
+
+_kiwi = None
+
+def _morph_stream(text):
+    """kiwi form 스트림 (표현 사전 매칭용). kiwi 없으면 None."""
+    global _kiwi
+    if _kiwi is None:
+        try:
+            from features_morph import get_kiwi
+            _kiwi = get_kiwi()
+        except Exception:
+            _kiwi = False
+    if not _kiwi:
+        return None
+    return ' '.join(t.form for t in _kiwi.tokenize(text))
+
+
+def _content_lemmas(text):
+    """내용어 lemma Counter (내용어 사전 매칭용). kiwi 없으면 None."""
+    global _kiwi
+    if _kiwi is None:
+        _morph_stream('')
+    if not _kiwi:
+        return None
+    tags = {'NNG', 'VV', 'VA', 'XR'}
+    return Counter(t.form for t in _kiwi.tokenize(text) if t.tag in tags)
 
 FEATURE_KO = {
     'CX_not_a_but_b_sent': '"~이 아니라 ~이다" 대조 구문',
@@ -87,10 +115,51 @@ def measure(text, pack):
                                                (ref['codex'] - ref['human'] or 1e-9), 2),
                              'val': round(r, 3), 'codex': ref['codex'],
                              'human': ref['human']})
+    # 내용어 사전: 코덱스 편애 내용어 밀도 (kiwi 필요)
+    lemmas = _content_lemmas(text)
+    if lemmas is not None and pack.get('content_words'):
+        n_lem = max(sum(lemmas.values()), 1)
+        used = []
+        for w, m in pack['content_words'].items():
+            c = lemmas.get(w, 0)
+            if c == 0:
+                continue
+            rate = 10000 * c / n_lem
+            if rate >= m['human_per10k']:
+                # 도달률 기반: 개별 단어 밀도 폭발(짧은 글)을 코덱스 수준으로 클립.
+                # 내용어는 '얼마나 진하게'보다 '코덱스 편애어를 몇 종 쓰나'가 신호라
+                # 단어당 상한을 낮게(≤0.7) 둬 폐쇄류·구문 마커를 압도하지 않게 한다.
+                reach = min(rate, m['codex_per10k'] * 1.5) / \
+                    (m['codex_per10k'] or 1e-9)
+                sev = min(reach, 1.0) * min(m['z'] / 5.0, 0.7)
+                used.append({'kind': 'content', 'word': w,
+                             'severity': round(sev, 2), 'count': c,
+                             'rate': round(rate, 1),
+                             'codex': m['codex_per10k'], 'human': m['human_per10k']})
+        used.sort(key=lambda h: -h['severity'])
+        hits.extend(used[:15])                   # 상위만 (내용어는 개수 많음)
+
+    # 표현 사전: 문법 표현 적중 (kiwi 필요)
+    stream = _morph_stream(text)
+    if stream is not None and pack.get('phrases'):
+        n_words = max(len(text.split()), 1)
+        for name, m in pack['phrases'].items():
+            c = len(re.findall(m['pattern'], stream))
+            if c == 0:
+                continue
+            rate = 10000 * c / n_words
+            if rate >= m['human_per10k']:
+                sev = min(rate / (m['codex_per10k'] or 1e-9), 1.5) * \
+                      min(math.log(m['ratio']) if m['ratio'] > 1 else 0.1, 1.5)
+                hits.append({'kind': 'phrase', 'phrase': name,
+                             'severity': round(sev, 2), 'count': c,
+                             'ratio': m['ratio']})
+
     hits.sort(key=lambda h: -h['severity'])
     codex_score = round(sum(h['severity'] for h in hits), 2)
     return {'codex_score': codex_score, 'n_hits': len(hits),
-            'n_sent': len(sents), 'hits': hits}
+            'n_sent': len(sents), 'hits': hits,
+            'kiwi': lemmas is not None}
 
 
 def prescribe(text, pack):
@@ -102,9 +171,15 @@ def prescribe(text, pack):
         if h['kind'] == 'feature':
             lines.append(f"[{h['severity']}] {h['name']} 과다 "
                          f"(현재 {h['val']}, 인간 기준 {h['human']}) — 줄여라")
-        else:
+        elif h['kind'] == 'dist':
             lines.append(f"[{h['severity']}] {h['family']} '{h['marker']}' 과다 "
                          f"({h['val']:.0%}, 인간 {h['human']:.0%}) — 다른 표현으로 분산")
+        elif h['kind'] == 'content':
+            lines.append(f"[{h['severity']}] 내용어 '{h['word']}' {h['count']}회 "
+                         f"(만어절당 {h['rate']}, 인간 {h['human']}) — 동의어·구체어로 대체")
+        elif h['kind'] == 'phrase':
+            lines.append(f"[{h['severity']}] 표현 '{h['phrase']}' {h['count']}회 "
+                         f"(인간의 {h['ratio']}배) — 다른 구문으로")
     return m, lines
 
 

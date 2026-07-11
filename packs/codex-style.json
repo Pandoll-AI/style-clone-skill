@@ -18,7 +18,8 @@
    ]
   },
   "recipe": "codex exec --skip-git-repo-check -s read-only -c model_reasoning_effort=low, minimal prompts (no style directive)",
-  "caveat": "표기 계열(로마자/한자/숫자/괄호)은 위키 장르 교란으로 서명에서 제외. 요인 공간은 1930s 소설 코퍼스 추정."
+  "caveat": "표기 계열(로마자/한자/숫자/괄호)은 위키 장르 교란으로 서명에서 제외. 요인 공간은 1930s 소설 코퍼스 추정.",
+  "lexicon_method": "content: weighted log-odds (Monroe 2008) + 주제분산 관문; phrases: 형태소 form 스트림 정규식 빈도비"
  },
  "factor_signature": {
   "길이 균질성": 1.91,
@@ -98,6 +99,577 @@
   "도시": {
    "codex": 0.044,
    "human": 0.021
+  }
+ },
+ "content_words": {
+  "시간": {
+   "z": 6.18,
+   "topics": 11,
+   "codex_per10k": 119.66,
+   "human_per10k": 42.14
+  },
+  "도시": {
+   "z": 5.1,
+   "topics": 5,
+   "codex_per10k": 44.87,
+   "human_per10k": 4.96
+  },
+  "환경": {
+   "z": 4.88,
+   "topics": 11,
+   "codex_per10k": 53.85,
+   "human_per10k": 13.22
+  },
+  "소리": {
+   "z": 4.63,
+   "topics": 6,
+   "codex_per10k": 43.88,
+   "human_per10k": 9.09
+  },
+  "자신": {
+   "z": 4.62,
+   "topics": 8,
+   "codex_per10k": 36.9,
+   "human_per10k": 2.48
+  },
+  "중요": {
+   "z": 4.56,
+   "topics": 12,
+   "codex_per10k": 49.86,
+   "human_per10k": 13.22
+  },
+  "달라지": {
+   "z": 4.5,
+   "topics": 11,
+   "codex_per10k": 34.9,
+   "human_per10k": 2.48
+  },
+  "습관": {
+   "z": 4.24,
+   "topics": 4,
+   "codex_per10k": 37.89,
+   "human_per10k": 8.26
+  },
+  "사람": {
+   "z": 4.03,
+   "topics": 11,
+   "codex_per10k": 62.82,
+   "human_per10k": 25.62
+  },
+  "반복": {
+   "z": 3.99,
+   "topics": 6,
+   "codex_per10k": 29.92,
+   "human_per10k": 4.96
+  },
+  "자연": {
+   "z": 3.9,
+   "topics": 9,
+   "codex_per10k": 29.92,
+   "human_per10k": 0.83
+  },
+  "활용": {
+   "z": 3.9,
+   "topics": 9,
+   "codex_per10k": 29.92,
+   "human_per10k": 0.83
+  },
+  "줄이": {
+   "z": 3.84,
+   "topics": 8,
+   "codex_per10k": 25.93,
+   "human_per10k": 3.31
+  },
+  "생활": {
+   "z": 3.75,
+   "topics": 10,
+   "codex_per10k": 24.93,
+   "human_per10k": 3.31
+  },
+  "저장": {
+   "z": 3.57,
+   "topics": 7,
+   "codex_per10k": 21.94,
+   "human_per10k": 1.65
+  },
+  "공간": {
+   "z": 3.52,
+   "topics": 8,
+   "codex_per10k": 24.93,
+   "human_per10k": 4.96
+  },
+  "이해": {
+   "z": 3.5,
+   "topics": 9,
+   "codex_per10k": 22.94,
+   "human_per10k": 0.83
+  },
+  "거리": {
+   "z": 3.49,
+   "topics": 6,
+   "codex_per10k": 20.94,
+   "human_per10k": 1.65
+  },
+  "인간": {
+   "z": 3.41,
+   "topics": 7,
+   "codex_per10k": 23.93,
+   "human_per10k": 4.96
+  },
+  "단순": {
+   "z": 3.37,
+   "topics": 11,
+   "codex_per10k": 20.94,
+   "human_per10k": 0.83
+  },
+  "동시": {
+   "z": 3.27,
+   "topics": 9,
+   "codex_per10k": 18.95,
+   "human_per10k": 2.48
+  },
+  "선택": {
+   "z": 3.24,
+   "topics": 6,
+   "codex_per10k": 17.95,
+   "human_per10k": 1.65
+  },
+  "관리": {
+   "z": 3.24,
+   "topics": 8,
+   "codex_per10k": 36.9,
+   "human_per10k": 14.05
+  },
+  "문제": {
+   "z": 3.23,
+   "topics": 7,
+   "codex_per10k": 18.95,
+   "human_per10k": 0.83
+  },
+  "형성": {
+   "z": 3.19,
+   "topics": 10,
+   "codex_per10k": 21.94,
+   "human_per10k": 4.96
+  },
+  "나누": {
+   "z": 3.11,
+   "topics": 7,
+   "codex_per10k": 19.94,
+   "human_per10k": 4.13
+  },
+  "만들": {
+   "z": 3.06,
+   "topics": 12,
+   "codex_per10k": 51.85,
+   "human_per10k": 25.62
+  },
+  "과제": {
+   "z": 3.0,
+   "topics": 7,
+   "codex_per10k": 15.96,
+   "human_per10k": 0.83
+  },
+  "기술": {
+   "z": 2.98,
+   "topics": 8,
+   "codex_per10k": 36.9,
+   "human_per10k": 15.7
+  },
+  "휴식": {
+   "z": 2.94,
+   "topics": 5,
+   "codex_per10k": 14.96,
+   "human_per10k": 1.65
+  },
+  "비교": {
+   "z": 2.87,
+   "topics": 11,
+   "codex_per10k": 17.95,
+   "human_per10k": 4.13
+  },
+  "보이": {
+   "z": 2.84,
+   "topics": 11,
+   "codex_per10k": 36.9,
+   "human_per10k": 16.53
+  },
+  "정하": {
+   "z": 2.83,
+   "topics": 6,
+   "codex_per10k": 13.96,
+   "human_per10k": 1.65
+  },
+  "일상": {
+   "z": 2.83,
+   "topics": 8,
+   "codex_per10k": 13.96,
+   "human_per10k": 1.65
+  },
+  "순간": {
+   "z": 2.82,
+   "topics": 7,
+   "codex_per10k": 14.96,
+   "human_per10k": 2.48
+  },
+  "바꾸": {
+   "z": 2.82,
+   "topics": 6,
+   "codex_per10k": 14.96,
+   "human_per10k": 2.48
+  },
+  "문화": {
+   "z": 2.82,
+   "topics": 7,
+   "codex_per10k": 18.95,
+   "human_per10k": 4.96
+  },
+  "안전": {
+   "z": 2.78,
+   "topics": 4,
+   "codex_per10k": 19.94,
+   "human_per10k": 5.78
+  },
+  "방식": {
+   "z": 2.77,
+   "topics": 11,
+   "codex_per10k": 28.92,
+   "human_per10k": 11.57
+  },
+  "지나치": {
+   "z": 2.73,
+   "topics": 8,
+   "codex_per10k": 12.96,
+   "human_per10k": 0.83
+  },
+  "연결": {
+   "z": 2.73,
+   "topics": 6,
+   "codex_per10k": 12.96,
+   "human_per10k": 0.83
+  },
+  "사실": {
+   "z": 2.71,
+   "topics": 10,
+   "codex_per10k": 12.96,
+   "human_per10k": 1.65
+  },
+  "온도": {
+   "z": 2.71,
+   "topics": 7,
+   "codex_per10k": 25.93,
+   "human_per10k": 9.92
+  },
+  "목표": {
+   "z": 2.71,
+   "topics": 5,
+   "codex_per10k": 12.96,
+   "human_per10k": 1.65
+  },
+  "조금": {
+   "z": 2.63,
+   "topics": 6,
+   "codex_per10k": 11.97,
+   "human_per10k": 0.83
+  },
+  "현실": {
+   "z": 2.63,
+   "topics": 4,
+   "codex_per10k": 11.97,
+   "human_per10k": 0.83
+  },
+  "마음": {
+   "z": 2.59,
+   "topics": 7,
+   "codex_per10k": 18.95,
+   "human_per10k": 0.0
+  },
+  "자리": {
+   "z": 2.56,
+   "topics": 6,
+   "codex_per10k": 12.96,
+   "human_per10k": 2.48
+  },
+  "신호": {
+   "z": 2.56,
+   "topics": 5,
+   "codex_per10k": 12.96,
+   "human_per10k": 2.48
+  },
+  "자동차": {
+   "z": 2.56,
+   "topics": 4,
+   "codex_per10k": 12.96,
+   "human_per10k": 2.48
+  },
+  "대화": {
+   "z": 2.53,
+   "topics": 5,
+   "codex_per10k": 10.97,
+   "human_per10k": 0.83
+  },
+  "모습": {
+   "z": 2.53,
+   "topics": 8,
+   "codex_per10k": 10.97,
+   "human_per10k": 0.83
+  },
+  "판단": {
+   "z": 2.53,
+   "topics": 5,
+   "codex_per10k": 10.97,
+   "human_per10k": 0.83
+  },
+  "방해": {
+   "z": 2.51,
+   "topics": 4,
+   "codex_per10k": 13.96,
+   "human_per10k": 3.31
+  },
+  "오늘날": {
+   "z": 2.5,
+   "topics": 7,
+   "codex_per10k": 17.95,
+   "human_per10k": 5.78
+  },
+  "집중": {
+   "z": 2.45,
+   "topics": 6,
+   "codex_per10k": 16.95,
+   "human_per10k": 0.0
+  },
+  "생각": {
+   "z": 2.42,
+   "topics": 6,
+   "codex_per10k": 24.93,
+   "human_per10k": 10.74
+  },
+  "멈추": {
+   "z": 2.41,
+   "topics": 5,
+   "codex_per10k": 9.97,
+   "human_per10k": 0.83
+  },
+  "관계": {
+   "z": 2.41,
+   "topics": 8,
+   "codex_per10k": 9.97,
+   "human_per10k": 0.83
+  },
+  "생기": {
+   "z": 2.4,
+   "topics": 10,
+   "codex_per10k": 15.96,
+   "human_per10k": 4.96
+  },
+  "변화": {
+   "z": 2.37,
+   "topics": 10,
+   "codex_per10k": 43.88,
+   "human_per10k": 24.79
+  },
+  "장소": {
+   "z": 2.3,
+   "topics": 8,
+   "codex_per10k": 14.96,
+   "human_per10k": 0.0
+  },
+  "낮추": {
+   "z": 2.3,
+   "topics": 6,
+   "codex_per10k": 9.97,
+   "human_per10k": 1.65
+  },
+  "전화": {
+   "z": 2.29,
+   "topics": 4,
+   "codex_per10k": 8.97,
+   "human_per10k": 0.83
+  },
+  "편리": {
+   "z": 2.29,
+   "topics": 5,
+   "codex_per10k": 8.97,
+   "human_per10k": 0.83
+  },
+  "일정": {
+   "z": 2.28,
+   "topics": 8,
+   "codex_per10k": 23.93,
+   "human_per10k": 10.74
+  },
+  "조절": {
+   "z": 2.25,
+   "topics": 9,
+   "codex_per10k": 10.97,
+   "human_per10k": 2.48
+  },
+  "바라보": {
+   "z": 2.22,
+   "topics": 6,
+   "codex_per10k": 13.96,
+   "human_per10k": 0.0
+  },
+  "익숙": {
+   "z": 2.22,
+   "topics": 8,
+   "codex_per10k": 13.96,
+   "human_per10k": 0.0
+  },
+  "느끼": {
+   "z": 2.22,
+   "topics": 5,
+   "codex_per10k": 13.96,
+   "human_per10k": 0.0
+  },
+  "핵심": {
+   "z": 2.22,
+   "topics": 6,
+   "codex_per10k": 13.96,
+   "human_per10k": 0.0
+  },
+  "시대": {
+   "z": 2.2,
+   "topics": 6,
+   "codex_per10k": 15.96,
+   "human_per10k": 5.78
+  },
+  "개인": {
+   "z": 2.19,
+   "topics": 7,
+   "codex_per10k": 11.97,
+   "human_per10k": 3.31
+  },
+  "구체": {
+   "z": 2.15,
+   "topics": 4,
+   "codex_per10k": 7.98,
+   "human_per10k": 0.83
+  },
+  "채우": {
+   "z": 2.15,
+   "topics": 4,
+   "codex_per10k": 7.98,
+   "human_per10k": 0.83
+  },
+  "집중력": {
+   "z": 2.15,
+   "topics": 4,
+   "codex_per10k": 7.98,
+   "human_per10k": 0.83
+  },
+  "기다리": {
+   "z": 2.14,
+   "topics": 6,
+   "codex_per10k": 12.96,
+   "human_per10k": 0.0
+  },
+  "노동": {
+   "z": 2.14,
+   "topics": 5,
+   "codex_per10k": 8.97,
+   "human_per10k": 1.65
+  },
+  "교통": {
+   "z": 2.14,
+   "topics": 4,
+   "codex_per10k": 8.97,
+   "human_per10k": 1.65
+  },
+  "필요": {
+   "z": 2.09,
+   "topics": 12,
+   "codex_per10k": 34.9,
+   "human_per10k": 19.83
+  },
+  "다르": {
+   "z": 2.08,
+   "topics": 8,
+   "codex_per10k": 18.95,
+   "human_per10k": 8.26
+  },
+  "가치": {
+   "z": 2.06,
+   "topics": 8,
+   "codex_per10k": 11.97,
+   "human_per10k": 0.0
+  },
+  "빠르": {
+   "z": 2.05,
+   "topics": 9,
+   "codex_per10k": 19.94,
+   "human_per10k": 9.09
+  },
+  "계획": {
+   "z": 2.03,
+   "topics": 4,
+   "codex_per10k": 20.94,
+   "human_per10k": 9.92
+  }
+ },
+ "phrases": {
+  "-는 셈이다": {
+   "pattern": "셈 이",
+   "ratio": 12.72,
+   "topics": 6,
+   "codex_per10k": 5.86,
+   "human_per10k": 0.0
+  },
+  "-ㄴ 채": {
+   "pattern": "ᆫ 채|은 채|는 채",
+   "ratio": 4.98,
+   "topics": 4,
+   "codex_per10k": 11.72,
+   "human_per10k": 1.95
+  },
+  "-어 주다": {
+   "pattern": "[어아여] 주",
+   "ratio": 2.82,
+   "topics": 10,
+   "codex_per10k": 28.46,
+   "human_per10k": 9.77
+  },
+  "-는 동안": {
+   "pattern": "는 동안|ᆫ 동안",
+   "ratio": 2.32,
+   "topics": 4,
+   "codex_per10k": 6.7,
+   "human_per10k": 2.61
+  },
+  "-어지다": {
+   "pattern": "[어아여] 지(?= )",
+   "ratio": 2.19,
+   "topics": 12,
+   "codex_per10k": 82.02,
+   "human_per10k": 37.14
+  },
+  "-기도 하다": {
+   "pattern": "기 도 하",
+   "ratio": 2.11,
+   "topics": 10,
+   "codex_per10k": 22.6,
+   "human_per10k": 10.43
+  },
+  "-지 않다": {
+   "pattern": "지 않",
+   "ratio": 1.88,
+   "topics": 12,
+   "codex_per10k": 78.67,
+   "human_per10k": 41.7
+  },
+  "-와/과 같이": {
+   "pattern": "같이|처럼",
+   "ratio": 1.65,
+   "topics": 10,
+   "codex_per10k": 29.29,
+   "human_per10k": 17.59
+  },
+  "-ㄴ다는 것": {
+   "pattern": "ᆫ다는|는다는",
+   "ratio": 1.62,
+   "topics": 12,
+   "codex_per10k": 19.25,
+   "human_per10k": 11.73
   }
  }
 }
