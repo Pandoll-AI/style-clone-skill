@@ -1,0 +1,485 @@
+{
+ "meta": {
+  "pack": "gongmun-register",
+  "model": "인간 공문(영등포구 보도자료, KOGL-4)",
+  "generated": "AUTO",
+  "genre": "mixed",
+  "genres_detected": [
+   "gongmun"
+  ],
+  "n_gen": 35,
+  "n_human": 75,
+  "discrimination_15sent": {
+   "acc": 0.914,
+   "ci95": [
+    0.876,
+    0.952
+   ],
+   "n": 210
+  },
+  "method": "build_pack.py 통합 파이프라인 (요인+특징+폐쇄류+사전+판별)",
+  "caveat": "표기 계열 제외(장르 교란). 요인 공간은 1930s 소설 추정. 대조군 장르에 특화 — 다장르 인간 대조군 권장.",
+  "pack_type": "register",
+  "usage": "공문체 부여/진단: score가 높을수록 공문체."
+ },
+ "factor_signature": {
+  "길이 균질성": -0.81,
+  "주제 반복성": 0.85,
+  "표기·대화 습관": -1.36,
+  "문어 격식성": 0.92,
+  "장단 교대성": 0.73
+ },
+ "feature_markers": {
+  "CX_geot_end_sent": {
+   "d": -0.75,
+   "codex": 0.0,
+   "human": 0.022
+  },
+  "L2_nominalization_ej": {
+   "d": -1.13,
+   "codex": 0.93,
+   "human": 2.366
+  },
+  "L2_etm_ej": {
+   "d": -0.99,
+   "codex": 8.885,
+   "human": 11.944
+  },
+  "L2_xsv_ej": {
+   "d": 0.85,
+   "codex": 10.11,
+   "human": 7.684
+  },
+  "L2_verb_density_ej": {
+   "d": -1.6,
+   "codex": 13.096,
+   "human": 23.155
+  },
+  "L2_etm_chain_max": {
+   "d": -0.55,
+   "codex": 0.641,
+   "human": 0.731
+  }
+ },
+ "ending_overuse": {
+  "혔다": {
+   "codex": 0.068,
+   "human": 0.005
+  },
+  "했다": {
+   "codex": 0.116,
+   "human": 0.041
+  },
+  "한다": {
+   "codex": 0.143,
+   "human": 0.068
+  },
+  "된다": {
+   "codex": 0.086,
+   "human": 0.046
+  }
+ },
+ "connective_overuse": {
+  "도록": {
+   "codex": 0.066,
+   "human": 0.021
+  },
+  "며": {
+   "codex": 0.188,
+   "human": 0.104
+  }
+ },
+ "adverb_overuse": {
+  "역시": {
+   "codex": 0.15,
+   "human": 0.063
+  },
+  "모두": {
+   "codex": 0.1,
+   "human": 0.05
+  },
+  "이제": {
+   "codex": 0.05,
+   "human": 0.022
+  },
+  "매우": {
+   "codex": 0.05,
+   "human": 0.025
+  },
+  "다시": {
+   "codex": 0.15,
+   "human": 0.052
+  }
+ },
+ "content_words": {
+  "지원": {
+   "z": 10.4,
+   "topics": 17,
+   "codex_per10k": 114.97,
+   "human_per10k": 5.53
+  },
+  "주민": {
+   "z": 9.52,
+   "topics": 12,
+   "codex_per10k": 96.68,
+   "human_per10k": 4.55
+  },
+  "운영": {
+   "z": 9.46,
+   "topics": 15,
+   "codex_per10k": 96.68,
+   "human_per10k": 6.5
+  },
+  "대상": {
+   "z": 8.77,
+   "topics": 17,
+   "codex_per10k": 96.68,
+   "human_per10k": 11.38
+  },
+  "청년": {
+   "z": 7.71,
+   "topics": 7,
+   "codex_per10k": 91.46,
+   "human_per10k": 0.98
+  },
+  "모집": {
+   "z": 7.35,
+   "topics": 9,
+   "codex_per10k": 60.1,
+   "human_per10k": 1.95
+  },
+  "생활": {
+   "z": 7.24,
+   "topics": 12,
+   "codex_per10k": 57.49,
+   "human_per10k": 4.23
+  },
+  "구청장": {
+   "z": 7.1,
+   "topics": 27,
+   "codex_per10k": 70.55,
+   "human_per10k": 0.98
+  },
+  "센터": {
+   "z": 7.0,
+   "topics": 11,
+   "codex_per10k": 52.26,
+   "human_per10k": 2.93
+  },
+  "제공": {
+   "z": 6.84,
+   "topics": 13,
+   "codex_per10k": 52.26,
+   "human_per10k": 4.23
+  },
+  "밝히": {
+   "z": 6.67,
+   "topics": 22,
+   "codex_per10k": 57.49,
+   "human_per10k": 7.16
+  },
+  "가구": {
+   "z": 6.54,
+   "topics": 5,
+   "codex_per10k": 49.65,
+   "human_per10k": 1.3
+  },
+  "사업": {
+   "z": 6.34,
+   "topics": 14,
+   "codex_per10k": 47.03,
+   "human_per10k": 4.55
+  },
+  "프로그램": {
+   "z": 6.18,
+   "topics": 8,
+   "codex_per10k": 47.03,
+   "human_per10k": 0.98
+  },
+  "신청": {
+   "z": 6.18,
+   "topics": 8,
+   "codex_per10k": 47.03,
+   "human_per10k": 0.98
+  },
+  "확대": {
+   "z": 6.1,
+   "topics": 8,
+   "codex_per10k": 44.42,
+   "human_per10k": 4.55
+  },
+  "서비스": {
+   "z": 6.06,
+   "topics": 9,
+   "codex_per10k": 39.2,
+   "human_per10k": 1.95
+  },
+  "교육": {
+   "z": 5.81,
+   "topics": 8,
+   "codex_per10k": 52.26,
+   "human_per10k": 8.78
+  },
+  "예방": {
+   "z": 5.67,
+   "topics": 4,
+   "codex_per10k": 39.2,
+   "human_per10k": 4.23
+  },
+  "정비": {
+   "z": 5.62,
+   "topics": 8,
+   "codex_per10k": 36.58,
+   "human_per10k": 0.98
+  },
+  "예정": {
+   "z": 5.59,
+   "topics": 11,
+   "codex_per10k": 33.97,
+   "human_per10k": 1.3
+  },
+  "강화": {
+   "z": 5.58,
+   "topics": 11,
+   "codex_per10k": 36.58,
+   "human_per10k": 3.58
+  },
+  "규모": {
+   "z": 5.35,
+   "topics": 8,
+   "codex_per10k": 31.36,
+   "human_per10k": 2.28
+  },
+  "일자리": {
+   "z": 5.23,
+   "topics": 6,
+   "codex_per10k": 52.26,
+   "human_per10k": 0.33
+  },
+  "추진": {
+   "z": 5.2,
+   "topics": 9,
+   "codex_per10k": 31.36,
+   "human_per10k": 2.93
+  },
+  "부담": {
+   "z": 4.94,
+   "topics": 8,
+   "codex_per10k": 26.13,
+   "human_per10k": 1.3
+  },
+  "대비": {
+   "z": 4.71,
+   "topics": 9,
+   "codex_per10k": 26.13,
+   "human_per10k": 0.65
+  },
+  "공원": {
+   "z": 4.7,
+   "topics": 4,
+   "codex_per10k": 36.58,
+   "human_per10k": 0.33
+  },
+  "취약": {
+   "z": 4.69,
+   "topics": 5,
+   "codex_per10k": 23.52,
+   "human_per10k": 1.3
+  },
+  "지난해": {
+   "z": 4.69,
+   "topics": 9,
+   "codex_per10k": 23.52,
+   "human_per10k": 1.3
+  },
+  "올해": {
+   "z": 4.53,
+   "topics": 8,
+   "codex_per10k": 23.52,
+   "human_per10k": 0.65
+  },
+  "기초": {
+   "z": 4.53,
+   "topics": 5,
+   "codex_per10k": 23.52,
+   "human_per10k": 0.65
+  },
+  "개선": {
+   "z": 4.42,
+   "topics": 5,
+   "codex_per10k": 31.36,
+   "human_per10k": 5.53
+  },
+  "참여": {
+   "z": 4.42,
+   "topics": 6,
+   "codex_per10k": 20.9,
+   "human_per10k": 0.98
+  },
+  "본격": {
+   "z": 4.41,
+   "topics": 6,
+   "codex_per10k": 20.9,
+   "human_per10k": 1.3
+  },
+  "공간": {
+   "z": 4.36,
+   "topics": 6,
+   "codex_per10k": 33.97,
+   "human_per10k": 6.83
+  },
+  "지급": {
+   "z": 4.32,
+   "topics": 5,
+   "codex_per10k": 20.9,
+   "human_per10k": 0.65
+  },
+  "체계": {
+   "z": 4.26,
+   "topics": 7,
+   "codex_per10k": 23.52,
+   "human_per10k": 2.93
+  },
+  "구성": {
+   "z": 4.24,
+   "topics": 6,
+   "codex_per10k": 20.9,
+   "human_per10k": 1.95
+  },
+  "계층": {
+   "z": 4.23,
+   "topics": 5,
+   "codex_per10k": 26.13,
+   "human_per10k": 0.33
+  },
+  "문화": {
+   "z": 4.19,
+   "topics": 6,
+   "codex_per10k": 28.74,
+   "human_per10k": 5.2
+  },
+  "시설": {
+   "z": 4.15,
+   "topics": 6,
+   "codex_per10k": 36.58,
+   "human_per10k": 8.78
+  },
+  "의견": {
+   "z": 4.14,
+   "topics": 5,
+   "codex_per10k": 23.52,
+   "human_per10k": 3.25
+  },
+  "중심": {
+   "z": 4.13,
+   "topics": 8,
+   "codex_per10k": 20.9,
+   "human_per10k": 2.28
+  },
+  "나서": {
+   "z": 3.94,
+   "topics": 8,
+   "codex_per10k": 26.13,
+   "human_per10k": 4.88
+  },
+  "마련": {
+   "z": 3.89,
+   "topics": 10,
+   "codex_per10k": 28.74,
+   "human_per10k": 6.18
+  },
+  "어르신": {
+   "z": 3.8,
+   "topics": 6,
+   "codex_per10k": 67.94,
+   "human_per10k": 0.0
+  },
+  "환경": {
+   "z": 3.67,
+   "topics": 10,
+   "codex_per10k": 33.97,
+   "human_per10k": 9.43
+  },
+  "주요": {
+   "z": 3.65,
+   "topics": 6,
+   "codex_per10k": 20.9,
+   "human_per10k": 3.58
+  },
+  "계획": {
+   "z": 3.47,
+   "topics": 9,
+   "codex_per10k": 23.52,
+   "human_per10k": 5.2
+  },
+  "진행": {
+   "z": 3.42,
+   "topics": 10,
+   "codex_per10k": 31.36,
+   "human_per10k": 9.11
+  },
+  "위하": {
+   "z": 3.25,
+   "topics": 23,
+   "codex_per10k": 94.07,
+   "human_per10k": 50.09
+  },
+  "이번": {
+   "z": 3.14,
+   "topics": 12,
+   "codex_per10k": 33.97,
+   "human_per10k": 11.71
+  },
+  "건강": {
+   "z": 3.07,
+   "topics": 4,
+   "codex_per10k": 20.9,
+   "human_per10k": 5.2
+  },
+  "조성": {
+   "z": 2.88,
+   "topics": 9,
+   "codex_per10k": 39.2,
+   "human_per10k": 0.0
+  },
+  "기간": {
+   "z": 2.7,
+   "topics": 6,
+   "codex_per10k": 28.74,
+   "human_per10k": 10.73
+  },
+  "안전": {
+   "z": 2.69,
+   "topics": 5,
+   "codex_per10k": 23.52,
+   "human_per10k": 7.81
+  },
+  "활동": {
+   "z": 2.55,
+   "topics": 8,
+   "codex_per10k": 28.74,
+   "human_per10k": 11.38
+  },
+  "주택": {
+   "z": 2.2,
+   "topics": 5,
+   "codex_per10k": 23.52,
+   "human_per10k": 9.76
+  },
+  "체험": {
+   "z": 2.1,
+   "topics": 5,
+   "codex_per10k": 20.9,
+   "human_per10k": 0.0
+  }
+ },
+ "phrases": {
+  "-을 통해": {
+   "pattern": "을 통하|를 통하",
+   "ratio": 2.19,
+   "topics": 8,
+   "codex_per10k": 25.01,
+   "human_per10k": 11.17
+  }
+ }
+}
