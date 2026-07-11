@@ -6,7 +6,8 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SKILL_SRC="$ROOT/skill"
 DEST="$HOME/.claude/skills/style-clone"
 
-ENGINE=(stylometry.py features_surface.py features_morph.py discourse.py
+ENGINE=(stylometry.py features_surface.py features_morph.py features_ext.py
+        discourse.py factors_runtime.py factors.json
         postprocess.py rerank.py loop.py)
 
 mkdir -p "$SKILL_SRC/scripts"

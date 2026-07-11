@@ -69,12 +69,15 @@ CAT_FAMILIES = ['endings', 'connectives', 'particles', 'adverbs']
 # ---------------------------------------------------------------- 지문 구축
 def build_fingerprint(text, author, chunk_sents=15, contrast_text=None,
                       example_bank_size=3, analyzer='surface',
-                      with_discourse=True):
+                      with_discourse=True, with_factors=True):
     """with_discourse=True(기본): 담화층(L4~L9) T0 특징을 지문에 통합 (P1).
 
     담화층의 채용 근거는 판별 정확도가 아니라 실패 모드 검출이다 —
     v1 승자 C2의 평탄화 오버피팅을 산포 지표가 잡아냈다 (README §실증 4).
     v1 수치 재현이 필요한 회귀 실험은 False로 끈다 (validate.py).
+
+    with_factors=True(기본): 요인 공간(factors.json)이 있으면 요인 정의와
+    작가 요인 통계를 지문에 내장한다 (P1.5). 요인은 진단 층 — z_total 불변.
     """
     mod = get_analyzer(analyzer)
     sents = mod.split_sentences(text)
@@ -169,6 +172,15 @@ def build_fingerprint(text, author, chunk_sents=15, contrast_text=None,
         dsc['conn'] = {'vocab': vocab, 'mean_dist': mean_dist,
                        'js_mean': mu, 'js_std': max(sd, 1e-6)}
         fp['discourse'] = dsc
+
+    # (6) 요인 층 (P1.5): 요인 정의를 지문에 내장 → 지문 단독으로 이식 가능
+    if with_factors:
+        import factors_runtime as fr
+        fdef = fr.load_factor_def()
+        if fdef is not None:
+            stats = fr.author_factor_stats(sents, fdef)
+            if stats is not None:
+                fp['factors'] = {'def': fdef, 'author': stats}
     return fp
 
 # ---------------------------------------------------------------- 채점
@@ -274,6 +286,16 @@ def score_text(text, fp, detail=False):
         out['flatness_hits'] = flat_hits
         if discourse_skipped:
             out['discourse_skipped'] = True
+    # 요인 층 (진단 전용 — z_total에 미반영, docs/06 R2 결정)
+    if 'factors' in fp:
+        import factors_runtime as fr
+        try:
+            fz, missing = fr.score_factors(sents, fp['factors'])
+            out['factors'] = fz
+            if missing:
+                out['factors_partial'] = len(missing)
+        except ValueError:
+            out['factors_skipped'] = True
     if detail:
         out['diagnostics'] = diag
     return out

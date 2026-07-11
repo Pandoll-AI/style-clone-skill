@@ -145,9 +145,22 @@ def diagnose(fp, text, z_accept=1.0, baseline_bound=None):
     verdict = 'accept' if res['score'] <= z_accept else 'revise'
     if baseline_bound is not None and res['distance'] < baseline_bound:
         verdict = 'STOP_caricature'
+
+    # 요인 층 요약 (P1.5): 어느 축이 흔들리는지 한 줄 요지 — 원자 처방의 '왜'
+    factor_notes = []
+    fdefs = {f['name']: f
+             for f in fp.get('factors', {}).get('def', {}).get('factors', [])}
+    for name, z in sorted(res.get('factors', {}).items(),
+                          key=lambda x: -abs(x[1])):
+        if abs(z) >= 1.5:
+            desc = fdefs.get(name, {}).get('description', '')
+            side = '작가보다 높음' if z > 0 else '작가보다 낮음'
+            factor_notes.append(f"요인 '{name}' z={z:+.1f} ({side}) — {desc}")
+
     return {'score': res['score'], 'distance': res['distance'],
             'n_sent': res['n_sent'], 'low_confidence': res['low_confidence'],
             'flatness_hits': res.get('flatness_hits', []),
+            'factor_notes': factor_notes,
             'verdict': verdict, 'prescriptions': presc}
 
 
