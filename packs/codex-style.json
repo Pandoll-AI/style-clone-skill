@@ -1,0 +1,103 @@
+{
+ "meta": {
+  "pack": "codex-style",
+  "model": "gpt-5.6-sol (codex-cli 0.144.1, effort=low)",
+  "generated": "2026-07-11",
+  "genres": [
+   "essay",
+   "expo",
+   "wiki"
+  ],
+  "topics": 12,
+  "contrast": "ko.wikipedia matched-topic (human prose)",
+  "discrimination_15sent": {
+   "codex_vs_human_acc": 0.898,
+   "ci95": [
+    0.843,
+    0.945
+   ]
+  },
+  "recipe": "codex exec --skip-git-repo-check -s read-only -c model_reasoning_effort=low, minimal prompts (no style directive)",
+  "caveat": "표기 계열(로마자/한자/숫자/괄호)은 위키 장르 교란으로 서명에서 제외. 요인 공간은 1930s 소설 코퍼스 추정."
+ },
+ "factor_signature": {
+  "길이 균질성": 1.91,
+  "결속 암시성": 0.92,
+  "주제 반복성": -1.45,
+  "표기·대화 습관": 0.94,
+  "문어 격식성": -0.56
+ },
+ "feature_markers": {
+  "L7_first_person_sent": {
+   "d": 0.71,
+   "codex": 0.035,
+   "human": 0.006
+  },
+  "CX_not_a_but_b_sent": {
+   "d": 0.82,
+   "codex": 0.037,
+   "human": 0.005
+  },
+  "L2_etm_ej": {
+   "d": 0.91,
+   "codex": 14.394,
+   "human": 11.205
+  },
+  "L2_verb_density_ej": {
+   "d": 0.67,
+   "codex": 26.234,
+   "human": 20.481
+  },
+  "L2_etm_chain_max": {
+   "d": 0.75,
+   "codex": 0.808,
+   "human": 0.695
+  }
+ },
+ "ending_overuse": {
+  "는다": {
+   "codex": 0.04,
+   "human": 0.018
+  },
+  "진다": {
+   "codex": 0.051,
+   "human": 0.02
+  },
+  "하다": {
+   "codex": 0.048,
+   "human": 0.021
+  }
+ },
+ "connective_overuse": {
+  "지만": {
+   "codex": 0.135,
+   "human": 0.071
+  },
+  "면서": {
+   "codex": 0.049,
+   "human": 0.025
+  }
+ },
+ "adverb_overuse": {
+  "그래서": {
+   "codex": 0.063,
+   "human": 0.005
+  },
+  "물론": {
+   "codex": 0.044,
+   "human": 0
+  },
+  "역시": {
+   "codex": 0.076,
+   "human": 0.016
+  },
+  "결국": {
+   "codex": 0.082,
+   "human": 0.027
+  },
+  "도시": {
+   "codex": 0.044,
+   "human": 0.021
+  }
+ }
+}
