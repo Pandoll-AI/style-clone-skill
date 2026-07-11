@@ -1,0 +1,22 @@
+{
+ "measurement_layer": {
+  "kimyj": {
+   "kimyj": 18,
+   "yisang": 0
+  },
+  "yisang": {
+   "kimyj": 3,
+   "yisang": 7
+  }
+ },
+ "bigram_verifier": {
+  "kimyj": {
+   "kimyj": 18,
+   "yisang": 0
+  },
+  "yisang": {
+   "kimyj": 0,
+   "yisang": 10
+  }
+ }
+}

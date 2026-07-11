@@ -1,0 +1,252 @@
+{
+ "에세이(원문)": {
+  "n_sent": 99,
+  "A_connective_dist": {
+   "인과": 0.04,
+   "역접": 0.081,
+   "부연": 0.0,
+   "예시": 0.01,
+   "전환": 0.051,
+   "첨가": 0.01,
+   "무표지": 0.808
+  },
+  "A_implicit_ratio": 0.808,
+  "A_top_transitions": {
+   "무표지→무표지": 0.6428571428571429,
+   "역접→무표지": 0.08163265306122448,
+   "무표지→역접": 0.07142857142857142,
+   "무표지→전환": 0.04081632653061224,
+   "전환→무표지": 0.030612244897959183
+  },
+  "B_jump_mean": 0.897,
+  "B_jump_std": 0.158,
+  "B_jump_p90": 1.0,
+  "B_flight_return_rate": 0.162,
+  "C_len_cv": 0.526,
+  "C_len_autocorr": 0.196,
+  "C_len_alternation": 0.672,
+  "C_jump_autocorr": 0.069,
+  "D_new_info_by_quartile": [
+   0.713,
+   0.6,
+   0.539,
+   0.37
+  ],
+  "E_question_by_quartile": [
+   0.042,
+   0.125,
+   0.083,
+   0.125
+  ],
+  "E_len_by_quartile": [
+   6.625,
+   6.208,
+   5.125,
+   6.083
+  ],
+  "E_echo_head_tail": 0.286,
+  "F_mtld_lite": 0.833,
+  "F_burstiness_fano": 0.895,
+  "F_len_gini": 0.286
+ },
+ "이상 날개": {
+  "n_sent": 641,
+  "A_connective_dist": {
+   "인과": 0.012,
+   "역접": 0.073,
+   "부연": 0.005,
+   "예시": 0.0,
+   "전환": 0.005,
+   "첨가": 0.017,
+   "무표지": 0.888
+  },
+  "A_implicit_ratio": 0.888,
+  "A_top_transitions": {
+   "무표지→무표지": 0.784375,
+   "무표지→역접": 0.0703125,
+   "역접→무표지": 0.0703125,
+   "첨가→무표지": 0.015625,
+   "무표지→첨가": 0.0140625
+  },
+  "B_jump_mean": 0.93,
+  "B_jump_std": 0.167,
+  "B_jump_p90": 1.0,
+  "B_flight_return_rate": 0.072,
+  "C_len_cv": 0.75,
+  "C_len_autocorr": 0.051,
+  "C_len_alternation": 0.693,
+  "C_jump_autocorr": 0.088,
+  "D_new_info_by_quartile": [
+   0.701,
+   0.5,
+   0.443,
+   0.435
+  ],
+  "E_question_by_quartile": [
+   0.056,
+   0.069,
+   0.044,
+   0.062
+  ],
+  "E_len_by_quartile": [
+   9.375,
+   9.944,
+   8.731,
+   8.325
+  ],
+  "E_echo_head_tail": 0.098,
+  "F_mtld_lite": 0.916,
+  "F_burstiness_fano": 0.935,
+  "F_len_gini": 0.369
+ },
+ "김유정 봄봄": {
+  "n_sent": 312,
+  "A_connective_dist": {
+   "인과": 0.006,
+   "역접": 0.054,
+   "부연": 0.006,
+   "예시": 0.0,
+   "전환": 0.022,
+   "첨가": 0.019,
+   "무표지": 0.891
+  },
+  "A_implicit_ratio": 0.891,
+  "A_top_transitions": {
+   "무표지→무표지": 0.7877813504823151,
+   "무표지→역접": 0.05144694533762058,
+   "역접→무표지": 0.05144694533762058,
+   "무표지→전환": 0.022508038585209004,
+   "첨가→무표지": 0.01929260450160772
+  },
+  "B_jump_mean": 0.956,
+  "B_jump_std": 0.154,
+  "B_jump_p90": 1.0,
+  "B_flight_return_rate": 0.032,
+  "C_len_cv": 0.613,
+  "C_len_autocorr": 0.318,
+  "C_len_alternation": 0.608,
+  "C_jump_autocorr": 0.224,
+  "D_new_info_by_quartile": [
+   0.822,
+   0.643,
+   0.62,
+   0.448
+  ],
+  "E_question_by_quartile": [
+   0.141,
+   0.128,
+   0.205,
+   0.051
+  ],
+  "E_len_by_quartile": [
+   10.564,
+   8.513,
+   11.128,
+   8.372
+  ],
+  "E_echo_head_tail": 0.117,
+  "F_mtld_lite": 0.956,
+  "F_burstiness_fano": 0.947,
+  "F_len_gini": 0.337
+ },
+ "C2(이론)": {
+  "n_sent": 21,
+  "A_connective_dist": {
+   "인과": 0.048,
+   "역접": 0.048,
+   "부연": 0.0,
+   "예시": 0.0,
+   "전환": 0.095,
+   "첨가": 0.0,
+   "무표지": 0.81
+  },
+  "A_implicit_ratio": 0.81,
+  "A_top_transitions": {
+   "무표지→무표지": 0.6,
+   "무표지→전환": 0.1,
+   "전환→무표지": 0.1,
+   "무표지→역접": 0.05,
+   "역접→무표지": 0.05
+  },
+  "B_jump_mean": 0.855,
+  "B_jump_std": 0.216,
+  "B_jump_p90": 1.0,
+  "B_flight_return_rate": 0.091,
+  "C_len_cv": 0.344,
+  "C_len_autocorr": -0.339,
+  "C_len_alternation": 0.769,
+  "C_jump_autocorr": 0.032,
+  "D_new_info_by_quartile": [
+   0.96,
+   0.703,
+   0.84,
+   0.37
+  ],
+  "E_question_by_quartile": [
+   0.2,
+   0.0,
+   0.2,
+   0.2
+  ],
+  "E_len_by_quartile": [
+   5.2,
+   5.4,
+   4.6,
+   4.6
+  ],
+  "E_echo_head_tail": 0.333,
+  "F_mtld_lite": 0.76,
+  "F_burstiness_fano": 0.857,
+  "F_len_gini": 0.19
+ },
+ "서브에이전트": {
+  "n_sent": 31,
+  "A_connective_dist": {
+   "인과": 0.065,
+   "역접": 0.097,
+   "부연": 0.0,
+   "예시": 0.0,
+   "전환": 0.097,
+   "첨가": 0.032,
+   "무표지": 0.71
+  },
+  "A_implicit_ratio": 0.71,
+  "A_top_transitions": {
+   "무표지→무표지": 0.43333333333333335,
+   "무표지→역접": 0.1,
+   "역접→무표지": 0.1,
+   "무표지→전환": 0.1,
+   "전환→무표지": 0.1
+  },
+  "B_jump_mean": 0.967,
+  "B_jump_std": 0.107,
+  "B_jump_p90": 1.0,
+  "B_flight_return_rate": 0.12,
+  "C_len_cv": 0.654,
+  "C_len_autocorr": -0.234,
+  "C_len_alternation": 0.64,
+  "C_jump_autocorr": 0.085,
+  "D_new_info_by_quartile": [
+   1.0,
+   0.738,
+   0.639,
+   0.661
+  ],
+  "E_question_by_quartile": [
+   0.143,
+   0.0,
+   0.143,
+   0.0
+  ],
+  "E_len_by_quartile": [
+   6.0,
+   6.0,
+   7.0,
+   8.571
+  ],
+  "E_echo_head_tail": 0.25,
+  "F_mtld_lite": 0.907,
+  "F_burstiness_fano": 0.881,
+  "F_len_gini": 0.351
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "protocol": {
+  "chunk_sents": 30,
+  "hold_every": 4,
+  "authors": [
+   "kimyj",
+   "yisang",
+   "hyunjg",
+   "chaems",
+   "leehs"
+  ],
+  "seed": 20260711,
+  "n_boot": 200
+ },
+ "measurement_surface": {
+  "accuracy": 0.75,
+  "ci95": [
+   0.6470588235294118,
+   0.8529411764705882
+  ],
+  "n_held": 68,
+  "confusion": {
+   "kimyj": {
+    "kimyj": 16,
+    "chaems": 5,
+    "hyunjg": 2
+   },
+   "yisang": {
+    "yisang": 9,
+    "hyunjg": 1
+   },
+   "hyunjg": {
+    "hyunjg": 6,
+    "leehs": 1,
+    "chaems": 1
+   },
+   "chaems": {
+    "chaems": 6,
+    "kimyj": 3,
+    "yisang": 1,
+    "leehs": 1
+   },
+   "leehs": {
+    "leehs": 14,
+    "yisang": 1,
+    "chaems": 1
+   }
+  },
+  "held_counts": {
+   "kimyj": 23,
+   "yisang": 10,
+   "hyunjg": 8,
+   "chaems": 11,
+   "leehs": 16
+  }
+ },
+ "bigram": {
+  "accuracy": 0.8970588235294118,
+  "ci95": [
+   0.8235294117647058,
+   0.9705882352941176
+  ],
+  "n_held": 68,
+  "confusion": {
+   "kimyj": {
+    "kimyj": 21,
+    "hyunjg": 2
+   },
+   "yisang": {
+    "yisang": 10
+   },
+   "hyunjg": {
+    "hyunjg": 7,
+    "chaems": 1
+   },
+   "chaems": {
+    "kimyj": 3,
+    "chaems": 7,
+    "leehs": 1
+   },
+   "leehs": {
+    "leehs": 16
+   }
+  }
+ }
+}

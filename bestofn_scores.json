@@ -1,0 +1,213 @@
+{
+ "C2": {
+  "z": 0.323,
+  "d": 0.1806,
+  "bigram": 0.35278232504424767,
+  "ban": [],
+  "diag": {
+   "js_endings": 0.0,
+   "js_connectives": 0.0,
+   "js_particles": 1.08,
+   "js_adverbs": 0.0,
+   "sent_len_mean": 1.03,
+   "sent_len_std": 1.17,
+   "sent_len_p90": 0.33,
+   "dialog_ratio": 0.1,
+   "comma_per_sent": 1.14,
+   "excl_per_sent": 0.0,
+   "quest_per_sent": 0.21,
+   "ellipsis_per_sent": 0.0,
+   "dash_per_1k_ej": 0.0,
+   "redup_per_1k_ej": 0.0
+  }
+ },
+ "C3": {
+  "z": 0.216,
+  "d": 0.1818,
+  "bigram": 0.28916469098342845,
+  "ban": [],
+  "diag": {
+   "js_endings": 0.0,
+   "js_connectives": 0.0,
+   "js_particles": 0.0,
+   "js_adverbs": 0.0,
+   "sent_len_mean": 1.06,
+   "sent_len_std": 0.92,
+   "sent_len_p90": 0.87,
+   "dialog_ratio": 0.08,
+   "comma_per_sent": 0.96,
+   "excl_per_sent": 0.0,
+   "quest_per_sent": 0.21,
+   "ellipsis_per_sent": 0.0,
+   "dash_per_1k_ej": 0.0,
+   "redup_per_1k_ej": 0.0
+  }
+ },
+ "C6": {
+  "z": 0.371,
+  "d": 0.1999,
+  "bigram": 0.3618994825302934,
+  "ban": [],
+  "diag": {
+   "js_endings": 0.0,
+   "js_connectives": 0.0,
+   "js_particles": 0.86,
+   "js_adverbs": 0.0,
+   "sent_len_mean": 1.25,
+   "sent_len_std": 0.62,
+   "sent_len_p90": 1.41,
+   "dialog_ratio": 0.71,
+   "comma_per_sent": 1.14,
+   "excl_per_sent": 0.0,
+   "quest_per_sent": 0.21,
+   "ellipsis_per_sent": 0.0,
+   "dash_per_1k_ej": 0.0,
+   "redup_per_1k_ej": 0.0
+  }
+ },
+ "C7": {
+  "z": 0.32,
+  "d": 0.231,
+  "bigram": 0.38638269678623677,
+  "ban": [],
+  "diag": {
+   "js_endings": 0.0,
+   "js_connectives": 0.0,
+   "js_particles": 0.53,
+   "js_adverbs": 0.14,
+   "sent_len_mean": 0.92,
+   "sent_len_std": 0.88,
+   "sent_len_p90": 0.87,
+   "dialog_ratio": 0.71,
+   "comma_per_sent": 1.14,
+   "excl_per_sent": 0.0,
+   "quest_per_sent": 0.21,
+   "ellipsis_per_sent": 0.0,
+   "dash_per_1k_ej": 0.0,
+   "redup_per_1k_ej": 0.0
+  }
+ },
+ "C4": {
+  "z": 2.182,
+  "d": 0.6909,
+  "bigram": 0.34720418066450015,
+  "ban": [
+   "endings:하다"
+  ],
+  "diag": {
+   "js_endings": 0.0,
+   "js_connectives": 0.0,
+   "js_particles": 0.0,
+   "js_adverbs": 0.21,
+   "sent_len_mean": 0.8,
+   "sent_len_std": 0.52,
+   "sent_len_p90": 0.33,
+   "dialog_ratio": 0.03,
+   "comma_per_sent": 1.14,
+   "excl_per_sent": 0.0,
+   "quest_per_sent": 0.21,
+   "ellipsis_per_sent": 0.0,
+   "dash_per_1k_ej": 0.0,
+   "redup_per_1k_ej": 0.0
+  }
+ },
+ "C5": {
+  "z": 2.222,
+  "d": 0.6989,
+  "bigram": 0.3161204592019199,
+  "ban": [
+   "adverbs:다"
+  ],
+  "diag": {
+   "js_endings": 0.0,
+   "js_connectives": 0.0,
+   "js_particles": 0.0,
+   "js_adverbs": 0.0,
+   "sent_len_mean": 0.69,
+   "sent_len_std": 0.6,
+   "sent_len_p90": 0.87,
+   "dialog_ratio": 0.71,
+   "comma_per_sent": 1.14,
+   "excl_per_sent": 0.0,
+   "quest_per_sent": 0.21,
+   "ellipsis_per_sent": 0.0,
+   "dash_per_1k_ej": 0.0,
+   "redup_per_1k_ej": 0.0
+  }
+ },
+ "C8": {
+  "z": 2.937,
+  "d": 0.9087,
+  "bigram": 0.3770994807328951,
+  "ban": [
+   "endings:하다"
+  ],
+  "diag": {
+   "js_endings": 1.11,
+   "js_connectives": 0.0,
+   "js_particles": 1.04,
+   "js_adverbs": 1.49,
+   "sent_len_mean": 0.6,
+   "sent_len_std": 0.95,
+   "sent_len_p90": 0.33,
+   "dialog_ratio": 0.19,
+   "comma_per_sent": 1.14,
+   "excl_per_sent": 0.0,
+   "quest_per_sent": 0.21,
+   "ellipsis_per_sent": 0.0,
+   "dash_per_1k_ej": 0.0,
+   "redup_per_1k_ej": 6.0
+  }
+ },
+ "C1": {
+  "z": 4.188,
+  "d": 1.1551,
+  "bigram": 0.31170890755775965,
+  "ban": [
+   "endings:하다",
+   "adverbs:다"
+  ],
+  "diag": {
+   "js_endings": 0.0,
+   "js_connectives": 0.0,
+   "js_particles": 0.0,
+   "js_adverbs": 0.0,
+   "sent_len_mean": 1.35,
+   "sent_len_std": 0.44,
+   "sent_len_p90": 0.33,
+   "dialog_ratio": 0.1,
+   "comma_per_sent": 1.14,
+   "excl_per_sent": 0.0,
+   "quest_per_sent": 0.21,
+   "ellipsis_per_sent": 0.0,
+   "dash_per_1k_ej": 0.0,
+   "redup_per_1k_ej": 0.0
+  }
+ },
+ "SUBAGENT": {
+  "z": 6.346,
+  "d": 1.6737,
+  "bigram": 0.2506184315314749,
+  "ban": [
+   "connectives:니까",
+   "connectives:는데",
+   "adverbs:다"
+  ],
+  "diag": {
+   "js_endings": 0.0,
+   "js_connectives": 0.0,
+   "js_particles": 0.0,
+   "js_adverbs": 0.0,
+   "sent_len_mean": 0.94,
+   "sent_len_std": 1.77,
+   "sent_len_p90": 2.88,
+   "dialog_ratio": 0.39,
+   "comma_per_sent": 0.39,
+   "excl_per_sent": 0.0,
+   "quest_per_sent": 0.21,
+   "ellipsis_per_sent": 0.0,
+   "dash_per_1k_ej": 0.0,
+   "redup_per_1k_ej": 0.0
+  }
+ }
+}
