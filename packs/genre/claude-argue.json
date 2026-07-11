@@ -1,0 +1,171 @@
+{
+ "meta": {
+  "pack": "claude-argue",
+  "model": "claude-sonnet-5",
+  "generated": "AUTO",
+  "genre": "argue",
+  "genres_detected": [
+   "argue"
+  ],
+  "n_gen": 12,
+  "n_human": 36,
+  "discrimination_15sent": {
+   "acc": 0.924,
+   "ci95": [
+    0.864,
+    0.985
+   ],
+   "n": 66
+  },
+  "method": "build_pack.py 통합 파이프라인 (요인+특징+폐쇄류+사전+판별)",
+  "caveat": "표기 계열 제외(장르 교란). 요인 공간은 1930s 소설 추정. 대조군 장르에 특화 — 다장르 인간 대조군 권장."
+ },
+ "factor_signature": {
+  "길이 균질성": 2.42,
+  "결속 암시성": 1.01,
+  "주제 반복성": -1.2,
+  "표기·대화 습관": 1.64,
+  "문어 격식성": -0.86
+ },
+ "feature_markers": {
+  "L3_sensory_ej": {
+   "d": -0.64,
+   "codex": 0.0,
+   "human": 0.158
+  },
+  "L3_word_syllables": {
+   "d": -1.18,
+   "codex": 2.976,
+   "human": 3.163
+  },
+  "CX_not_a_but_b_sent": {
+   "d": 1.43,
+   "codex": 0.087,
+   "human": 0.014
+  },
+  "CX_geot_end_sent": {
+   "d": -0.9,
+   "codex": 0.0,
+   "human": 0.033
+  },
+  "CX_conditional_sent": {
+   "d": -0.51,
+   "codex": 0.008,
+   "human": 0.033
+  },
+  "L2_nominalization_ej": {
+   "d": -1.26,
+   "codex": 1.145,
+   "human": 2.692
+  },
+  "L2_etm_chain_max": {
+   "d": 0.66,
+   "codex": 0.865,
+   "human": 0.77
+  },
+  "L3_abstract_suffix_ej": {
+   "d": 0.95,
+   "codex": 2.801,
+   "human": 1.489
+  },
+  "L7_interjection_sent": {
+   "d": -0.56,
+   "codex": 0.0,
+   "human": 0.011
+  },
+  "L7_quote_particle_sent": {
+   "d": -0.59,
+   "codex": 0.0,
+   "human": 0.01
+  }
+ },
+ "ending_overuse": {
+  "시오": {
+   "codex": 0.084,
+   "human": 0.004
+  }
+ },
+ "connective_overuse": {
+  "는데": {
+   "codex": 0.056,
+   "human": 0.03
+  },
+  "도록": {
+   "codex": 0.097,
+   "human": 0.024
+  }
+ },
+ "adverb_overuse": {
+  "결국": {
+   "codex": 0.057,
+   "human": 0.015
+  },
+  "지금": {
+   "codex": 0.171,
+   "human": 0.03
+  },
+  "다시": {
+   "codex": 0.086,
+   "human": 0.038
+  },
+  "역시": {
+   "codex": 0.057,
+   "human": 0.011
+  },
+  "가장": {
+   "codex": 0.114,
+   "human": 0.03
+  }
+ },
+ "content_words": {
+  "아이": {
+   "z": 3.05,
+   "topics": 6,
+   "codex_per10k": 91.19,
+   "human_per10k": 28.41
+  },
+  "문제": {
+   "z": 2.11,
+   "topics": 6,
+   "codex_per10k": 68.39,
+   "human_per10k": 27.52
+  }
+ },
+ "phrases": {
+  "-와/과 같이": {
+   "pattern": "같이|처럼",
+   "ratio": 2.68,
+   "topics": 6,
+   "codex_per10k": 49.47,
+   "human_per10k": 18.14
+  },
+  "-어지다": {
+   "pattern": "[어아여] 지(?= )",
+   "ratio": 2.23,
+   "topics": 7,
+   "codex_per10k": 55.66,
+   "human_per10k": 24.68
+  },
+  "수 없다": {
+   "pattern": "수 없",
+   "ratio": 1.62,
+   "topics": 5,
+   "codex_per10k": 30.92,
+   "human_per10k": 18.87
+  },
+  "-지 않다": {
+   "pattern": "지 않",
+   "ratio": 1.6,
+   "topics": 8,
+   "codex_per10k": 80.4,
+   "human_per10k": 50.08
+  },
+  "-어 주다": {
+   "pattern": "[어아여] 주",
+   "ratio": 1.56,
+   "topics": 12,
+   "codex_per10k": 86.58,
+   "human_per10k": 55.16
+  }
+ }
+}

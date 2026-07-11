@@ -1,0 +1,295 @@
+{
+ "meta": {
+  "pack": "codex-argue",
+  "model": "gpt-5.6-sol",
+  "generated": "AUTO",
+  "genre": "argue",
+  "genres_detected": [
+   "argue"
+  ],
+  "n_gen": 12,
+  "n_human": 36,
+  "discrimination_15sent": {
+   "acc": 0.985,
+   "ci95": [
+    0.955,
+    1.0
+   ],
+   "n": 66
+  },
+  "method": "build_pack.py 통합 파이프라인 (요인+특징+폐쇄류+사전+판별)",
+  "caveat": "표기 계열 제외(장르 교란). 요인 공간은 1930s 소설 추정. 대조군 장르에 특화 — 다장르 인간 대조군 권장."
+ },
+ "factor_signature": {
+  "문장 호흡": 0.63,
+  "길이 균질성": 1.8,
+  "결속 암시성": 0.75,
+  "표기·대화 습관": 0.94,
+  "구체성": -0.64
+ },
+ "feature_markers": {
+  "L3_sensory_ej": {
+   "d": -0.64,
+   "codex": 0.0,
+   "human": 0.158
+  },
+  "L7_booster_sent": {
+   "d": 0.56,
+   "codex": 0.044,
+   "human": 0.012
+  },
+  "L7_first_person_sent": {
+   "d": -0.97,
+   "codex": 0.008,
+   "human": 0.099
+  },
+  "CX_not_a_but_b_sent": {
+   "d": 1.64,
+   "codex": 0.123,
+   "human": 0.014
+  },
+  "CX_hal_su_sent": {
+   "d": 0.52,
+   "codex": 0.113,
+   "human": 0.07
+  },
+  "CX_geot_end_sent": {
+   "d": -0.9,
+   "codex": 0.0,
+   "human": 0.033
+  },
+  "CX_triple_list_sent": {
+   "d": 0.96,
+   "codex": 0.067,
+   "human": 0.018
+  },
+  "L2_nominalization_ej": {
+   "d": -1.6,
+   "codex": 0.906,
+   "human": 2.692
+  },
+  "L2_xsv_ej": {
+   "d": 1.42,
+   "codex": 9.784,
+   "human": 7.014
+  },
+  "L2_verb_density_ej": {
+   "d": -1.7,
+   "codex": 19.449,
+   "human": 26.961
+  },
+  "L2_subject_ellipsis_sent": {
+   "d": 0.85,
+   "codex": 0.605,
+   "human": 0.479
+  },
+  "L3_abstract_suffix_ej": {
+   "d": 2.14,
+   "codex": 4.315,
+   "human": 1.489
+  },
+  "L7_interjection_sent": {
+   "d": -0.56,
+   "codex": 0.0,
+   "human": 0.011
+  },
+  "L7_quote_particle_sent": {
+   "d": -0.59,
+   "codex": 0.0,
+   "human": 0.01
+  }
+ },
+ "ending_overuse": {
+  "시오": {
+   "codex": 0.105,
+   "human": 0.004
+  }
+ },
+ "connective_overuse": {
+  "도록": {
+   "codex": 0.179,
+   "human": 0.024
+  },
+  "거나": {
+   "codex": 0.047,
+   "human": 0.011
+  }
+ },
+ "adverb_overuse": {
+  "그러나": {
+   "codex": 0.417,
+   "human": 0.068
+  },
+  "오히려": {
+   "codex": 0.042,
+   "human": 0.008
+  },
+  "역시": {
+   "codex": 0.042,
+   "human": 0.011
+  },
+  "결코": {
+   "codex": 0.042,
+   "human": 0.004
+  },
+  "이제": {
+   "codex": 0.125,
+   "human": 0.034
+  }
+ },
+ "content_words": {
+  "지역": {
+   "z": 6.45,
+   "topics": 7,
+   "codex_per10k": 121.55,
+   "human_per10k": 9.77
+  },
+  "지원": {
+   "z": 5.21,
+   "topics": 10,
+   "codex_per10k": 82.87,
+   "human_per10k": 7.99
+  },
+  "의료": {
+   "z": 4.99,
+   "topics": 6,
+   "codex_per10k": 88.4,
+   "human_per10k": 12.43
+  },
+  "교육": {
+   "z": 4.49,
+   "topics": 7,
+   "codex_per10k": 93.92,
+   "human_per10k": 19.53
+  },
+  "책임": {
+   "z": 4.48,
+   "topics": 7,
+   "codex_per10k": 77.35,
+   "human_per10k": 12.43
+  },
+  "촉구": {
+   "z": 4.42,
+   "topics": 11,
+   "codex_per10k": 60.77,
+   "human_per10k": 6.22
+  },
+  "피해": {
+   "z": 4.42,
+   "topics": 6,
+   "codex_per10k": 71.82,
+   "human_per10k": 10.65
+  },
+  "국회": {
+   "z": 4.41,
+   "topics": 9,
+   "codex_per10k": 55.25,
+   "human_per10k": 3.55
+  },
+  "줄이": {
+   "z": 4.35,
+   "topics": 8,
+   "codex_per10k": 55.25,
+   "human_per10k": 1.78
+  },
+  "정책": {
+   "z": 4.3,
+   "topics": 9,
+   "codex_per10k": 99.45,
+   "human_per10k": 23.97
+  },
+  "비용": {
+   "z": 3.95,
+   "topics": 5,
+   "codex_per10k": 44.2,
+   "human_per10k": 2.66
+  },
+  "반복": {
+   "z": 3.94,
+   "topics": 6,
+   "codex_per10k": 44.2,
+   "human_per10k": 1.78
+  },
+  "확대": {
+   "z": 3.91,
+   "topics": 7,
+   "codex_per10k": 55.25,
+   "human_per10k": 7.99
+  },
+  "강화": {
+   "z": 3.84,
+   "topics": 7,
+   "codex_per10k": 49.72,
+   "human_per10k": 6.22
+  },
+  "마련": {
+   "z": 3.71,
+   "topics": 10,
+   "codex_per10k": 66.3,
+   "human_per10k": 14.21
+  },
+  "가능": {
+   "z": 3.59,
+   "topics": 5,
+   "codex_per10k": 49.72,
+   "human_per10k": 7.99
+  },
+  "보장": {
+   "z": 3.52,
+   "topics": 5,
+   "codex_per10k": 44.2,
+   "human_per10k": 6.22
+  },
+  "보호": {
+   "z": 3.41,
+   "topics": 8,
+   "codex_per10k": 71.82,
+   "human_per10k": 19.53
+  },
+  "인력": {
+   "z": 3.25,
+   "topics": 5,
+   "codex_per10k": 44.2,
+   "human_per10k": 7.99
+  },
+  "기준": {
+   "z": 3.09,
+   "topics": 6,
+   "codex_per10k": 55.25,
+   "human_per10k": 14.21
+  },
+  "디지털": {
+   "z": 2.84,
+   "topics": 4,
+   "codex_per10k": 49.72,
+   "human_per10k": 0.0
+  },
+  "처벌": {
+   "z": 2.54,
+   "topics": 4,
+   "codex_per10k": 60.77,
+   "human_per10k": 22.2
+  },
+  "사회": {
+   "z": 2.43,
+   "topics": 8,
+   "codex_per10k": 93.92,
+   "human_per10k": 44.39
+  },
+  "정부": {
+   "z": 2.14,
+   "topics": 11,
+   "codex_per10k": 93.92,
+   "human_per10k": 48.83
+  }
+ },
+ "phrases": {
+  "-어 주다": {
+   "pattern": "[어아여] 주",
+   "ratio": 1.64,
+   "topics": 11,
+   "codex_per10k": 90.91,
+   "human_per10k": 55.16
+  }
+ }
+}
